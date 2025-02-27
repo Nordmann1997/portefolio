@@ -1,0 +1,257 @@
+/* GENERAL */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-image: ;
+}
+
+html {
+  scroll-behavior: smooth;
+
+}
+
+p {
+  color: rgb(85, 85, 85);
+}
+
+/* TRANSITION */
+
+a,
+.btn {
+  transition: all 300ms ease;
+}
+
+/* DESKTOP NAV */
+
+
+
+
+nav#desktop-nav {
+  display: flex;
+  justify-content: space-between; /* Plasserer logo til venstre og socials til høyre */
+  align-items: center;
+ 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 7vh;
+  background: #fff;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-size: 2rem;
+  color: grey;
+  text-decoration: none;
+  margin-left: 30px;
+}
+
+#socials-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-right: 30px;
+}
+
+.icon {
+  height: 2rem;
+  cursor: pointer;
+}
+
+
+
+section {
+  
+  height: 10vh;
+  margin: 0 5rem;
+  box-sizing: border-box;
+  margin-top: 7vh;
+
+  
+}
+
+
+
+/* PROFILE SECTION */
+
+/* Eksisterende stil for profile-seksjonen */
+#profile {
+  display: inline-flex;
+  justify-content: center;
+  gap: 5rem;
+  height: 40vh;
+  margin-top: 7vh;
+}
+
+.section__pic-container {
+   flex: 0 0 auto;
+  width: 400px;
+  height: 400px;
+
+  margin: auto 0;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.section__pic-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.section__text {
+  align-self: center;
+  text-align: center;
+}
+
+
+.section__text p {
+  font-weight: 600;
+}
+
+.section__text__p1 {
+  text-align: center;
+}
+
+.section__text__p2 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 3rem;
+  text-align: center;
+}
+
+
+/* ICONS */
+
+.icon {
+  cursor: pointer;
+  height: 2rem;
+}
+
+/* BUTTONS */
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  font-weight: 600;
+  transition: all 300ms ease;
+  padding: 1rem;
+  width: 8rem;
+  border-radius: 2rem;
+}
+
+.btn-color-1,
+.btn-color-2 {
+  border: rgb(53, 53, 53) 0.1rem solid;
+}
+
+.btn-color-1:hover,
+.btn-color-2:hover {
+  cursor: pointer;
+}
+
+.btn-color-1,
+.btn-color-2:hover {
+  background: rgb(53, 53, 53);
+  color: white;
+}
+
+.btn-color-1:hover {
+  background: rgb(0, 0, 0);
+}
+
+.btn-color-2 {
+  background: none;
+}
+
+.btn-color-2:hover {
+  border: rgb(255, 255, 255) 0.1rem solid;
+}
+
+.btn-container {
+  gap: 1rem;
+}
+
+.ballinfo p {
+  font-size: 10px !important;
+}
+
+.ballinfo {
+  padding-top: 2vh;
+}
+
+/* FOOTER SECTION */
+
+
+
+@media (max-width: 768px) {
+  /* Fjern den generelle section-regelen hvis den påvirker #profile */
+  /* 
+  section {
+    height: 10vh;
+    margin: 0 2rem;
+    box-sizing: border-box;
+    margin-top: 7vh;
+  }
+  */
+
+  /* Bruk spesifikke regler for #profile */
+  #profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  /* Sentrerer innholdet vertikalt */
+    gap: 1rem;
+    padding: 1rem;
+    margin-top: 7vh; /* Eller fjern om du ønsker at #profile skal være sentrert i main */
+  }
+
+  /* Gjør bildecontaineren mindre og sentrert */
+  .section__pic-container {
+    width: 80%; 
+    max-width: 200px;
+    height: auto;
+    aspect-ratio: 1;
+    margin: 0 auto;
+    flex: 0 0 auto;
+    /* Fjern eventuelle ekstra marginer hvis de ikke trengs */
+  }
+  
+  /* Bildet fyller containeren */
+  .section__pic-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Gjør teksten mindre og sentrert */
+  .section__text {
+    text-align: center;
+    padding: 0 1rem;
+  }
+  
+  .section__text .title {
+    font-size: 2rem;   /* Mindre overskrift */
+  }
+  
+  .section__text p {
+    font-size: 1rem;   /* Mindre paragrafstørrelse */
+  }
+}
+

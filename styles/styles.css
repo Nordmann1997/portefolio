@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    overflow: hidden; /* Hindrer scrollbars */
+    
+}
+main {
+  padding-top: 14vh; /* Sørger for at hovedinnholdet starter under nav */
+}
+
+#gameContainer {
+   
+
+    
+    
+
+}
+
+.ball {
+    position: absolute;
+    width: 15vw;  /* Størrelsen på ballene */
+    height: 15vw;
+    border-radius: 50%;
+    background-size: cover;
+    transition: all 0.5s; 
+}
+
+ footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+}
+
+
+.ball:hover {
+    border: 3px solid green;
+}
+
+
