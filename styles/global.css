@@ -61,15 +61,36 @@ a:hover {
   text-decoration-color: rgb(181, 181, 181);
 }
 
+nav#desktop-nav {
+  display: flex;
+  justify-content: space-between; /* Plasserer logo til venstre og socials til høyre */
+  align-items: center;
+ 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 7vh;
+  background: #fff;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
 .logo {
-  font-size: 3rem;
-  padding-right: 50px;
-  padding-left: 80px;
+  font-size: 2rem;
   color: grey;
+  text-decoration: none;
+  margin-left: 30px;
 }
 
-.logo:hover {
-  cursor: default;
-  color: black;
+#socials-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-right: 30px;
 }
 
+.icon {
+  height: 2rem;
+  cursor: pointer;
+}
