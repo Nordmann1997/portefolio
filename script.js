@@ -114,7 +114,7 @@ function createWorld() {
 
     gameObjects = [
         new Ball(100, 50, 50, 0, ballSize / 2, 'pictures/index/benk.jpg'),
-        new Ball(400, 100, -50, 0, ballSize / 2, 'pictures/index/dørhåndtak.jpg'),
+        new Ball(400, 100, -50, 0, ballSize / 2, 'pictures/index/dorhondtak.jpg'),
         new Ball(700, 150, 0, 50, ballSize / 2, 'pictures/index/ludo.jpg'),
         new Ball(900, 200, 30, 30, ballSize / 2, 'pictures/index/magnetholder.jpg'),
         new Ball(1100, 250, -30, 40, ballSize / 2, 'pictures/index/oval.jpg', 'oval.html')
