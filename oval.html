@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oval - Høyttaler</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/product.css">
+    
+</head>
+<body>
+    <nav id="desktop-nav">
+        <div class="logo">
+            <a href="#" onclick="history.back(); return false;">JWK</a>
+        </div>
+        <div class="product_name">
+            <h1>Oval</h1>
+        </div>
+        <div>
+            <div id="socials-container">
+                <img
+                    src="./pictures/index/Instagram_logo.png"
+                    alt="My instagram account"
+                    class="icon"
+                    onclick="window.open('https://www.instagram.com/made_by_jwk/', '_blank');"
+                />
+            </div>
+        </div>
+    </nav>
+
+    <!-- Tilbake-knapp -->
+    <input type="button" value="Go back!" onclick="history.back()">
+    
+    <main>
+       
+        <img src="pictures/oval/front.jpg" alt="Oval høyttaler" class="main-image">
+        
+        <section class="image-grid">
+            <img src="pictures/oval/side.jpg" alt="Sidevisning">
+            <div class="description-box">
+                <p>
+                    Oval er en høyttaler designet med fokus på interiør design. Formen er myk med naturlige materialvalg som gjør det lett å integrere i hjem. <br>
+                    Høyttaleren opperes med en enkel knapp, laget i stål og furu for myk taktilitet, men høy styrke for langvarig bruk. <br>
+                    Høyttaleren er maskinert ut i furu, med en stålring rundt som gir en naturlig avsluttning og start på de naturlige åringene.
+                </p>
+            </div>
+            <img src="pictures/oval/bak.jpg" alt="Knapp detalj">
+            <img src="pictures/oval/open.jpg" alt="Komponenter">
+            <img src="pictures/oval/under.jpg" alt="Komponenter">
+            <img src="pictures/oval/colors.jpg" alt="Komponenter">
+        </section>
+
+        <!-- New How It's Made Section -->
+        <section class="how-its-made">
+            <h1>How It's Made</h1>
+            <div class="image-grid">
+                <div class="process-step">
+                    <img src="pictures/oval/treverk.jpg" alt="Treverk limt sammen til en blokk">
+                    <div class="text-box">
+                        <h3>Forberede materiale</h3>
+                        <p>Limer sammen treverk til en treblokk slik at det kan maskineres.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <video controls>
+                        <source src="pictures/oval/maskinering.mp4" type="video/mp4">
+                        Din nettleser støtter ikke video.
+                    </video>
+                    <div class="text-box">
+                        <h3>Maskinering</h3>
+                        <p>Presisjonsmaskinering av treverket.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <img src="pictures/oval/resultat_maskinering.jpg" alt="Grovt maskinert resultat">
+                    <div class="text-box">
+                        <h3>Grovt maskinert</h3>
+                        <p>Sammenstilling av komponenter og elektronikk.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <img src="pictures/oval/before_after.jpg" alt="Fra mockup til prototype">
+                    <div class="text-box">
+                        <h3>Fra mockup til prototype</h3>
+                        <p>Siste overflatebehandling og kvalitetskontroll.</p>
+                    </div>
+                </div>
+                <div class="process-step">
+                    <img src="pictures/oval/knapp.jpg" alt="Knapp i stål og furu">
+                    <div class="text-box">
+                        <h3>Knapp</h3>
+                        <p>Maskinert i stål med furu i midten og akrylring rundt for lys.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+    <script src="scripts/product.js"></script>
+</body>
+</html>
