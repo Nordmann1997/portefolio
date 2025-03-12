@@ -1,0 +1,278 @@
+/* GENERAL */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+p {
+  color: rgb(85, 85, 85);
+  font-family: Poppins;
+}
+
+
+
+
+
+
+
+
+
+body {
+    font-family: poppins;
+    margin: 0;
+    padding: 0;
+   
+    text-align: center;
+}
+
+
+p {
+    
+    
+    font-size: 15px;
+    font-family: poppins;
+    color: black;
+    text-align: left;
+}
+
+
+h1 {
+    font-size: 40px;
+    
+}
+
+
+
+.main-image {
+    width: 95vw;
+    
+    
+}
+
+.bottom-image {
+    width: 95vw;
+    margin-top: 20px;
+}
+
+.description {
+    max-width: 600px;
+    margin: 20px auto;
+    font-size: 18px;
+    color: #333;
+    text-align: left;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* To kolonner */
+    grid-template-rows: repeat(3, auto); /* Tre rader */
+    gap: 30px;
+    justify-items: center;
+    max-width: 95vw;
+    margin: 0 auto;
+    padding-top: 30px;
+    width: 100%; /* Ensure it takes full width */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.image-grid img,
+.image-grid video {
+    width: 100%;
+    
+}
+
+.description-box {
+    text-align: left;
+    max-width: 100%;
+    display: flex;
+    flex-direction: auto;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.7;
+    grid-column: 1 / 3; /* Plasseres i høyre kolonne */
+    grid-row: 1 / 2; /* På samme rad som "åpen høyttaler"-bildet */
+    width: 100%; /* Ensure it takes full width */
+    box-sizing: border-box; /* Include padding in width calculation */
+   
+    }
+
+
+.description-box p {
+    width: 100%;
+    
+   
+    }
+    
+
+
+/* Plasserer beskrivelsen i grid-systemet */
+.description-box {
+    grid-column: 1 / 3; /* Plasseres i høyre kolonne */
+    grid-row: 1 / 2; /* På samme rad som "åpen høyttaler"-bildet */
+}
+
+
+/* Generell styling for seksjonen */
+.how-its-made {
+    margin-top: 40px;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.how-its-made h1 {
+    font-size: 30px;
+    font-weight: bold;
+    padding-bottom: 50px;
+    color: 80 ,80, 80;
+}
+
+/* Flex for å stable process-step-elementene vertikalt */
+.how-its-made .image-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0; /* Remove gap to ensure edge-to-edge alignment */
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px; /* Add padding to the sides */
+}
+
+/* Styling for hver process-step */
+.process-step {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    height: auto;
+    flex-direction: row;
+   
+}
+
+/* For odd process-steps, place the image on the left side */
+.process-step:nth-child(odd) {
+    flex-direction: row;
+}
+
+/* For even process-steps, place the image on the right side */
+.process-step:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* Bilder og video */
+.process-step img,
+.process-step video {
+    width: 50%; /* Ensure images take half the width */
+    height: 100%; /* Ensure images take full height */
+    object-fit: cover;
+    transition: all 0.5s;
+}
+
+/* Tekstboks */
+.text-box {
+    width: 50%; /* Ensure text boxes take half the width */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px; /* Add padding for text */
+}
+
+/* Responsivitet for mobil */
+@media (max-width: 768px) {
+    .process-step {
+        display: flex;
+        flex-direction: column !important; /* Forces image above text */
+        align-items: center;
+        text-align: left;
+        width: 100%;
+        
+        margin-bottom: 60px !important; /* Ensures spacing between steps */
+    }
+
+    .process-step img,
+    .process-step video {
+        width: 100% !important; /* Forces full width */
+        height: auto !important;
+        margin-bottom: 15px !important; /* Space between image and text */
+    }
+
+    .text-box {
+        width: 100% !important;
+        text-align: left;
+        padding: 0 10px;
+    }
+
+    .text-box p {
+        margin: 0 !important; /* Removes unnecessary extra spacing */
+    }
+
+
+
+
+    .description-box {
+        grid-column: 1 / -1; /* Tar opp hele bredden */
+        grid-row: 1 / 2; /* Plasseres under hovedbildet */
+        width: 100%; /* Ensure it takes full width */
+        box-sizing: border-box; /* Include padding in width calculation */
+    }
+
+    .how-its-made .image-grid {
+        flex-direction: column; /* Stable process-step-elementene vertikalt */
+    }
+
+    .image-grid {
+        grid-template-columns: 1fr; /* En kolonne */
+        grid-template-rows: auto; /* Automatisk høyde */
+        width: 100%; /* Ensure it takes full width */
+        box-sizing: border-box; /* Include padding in width calculation */
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .text-box h3 {
+        font-size: 19px;
+        margin-top: 5px;
+        font-weight: bold;
+        color: rgb(55, 55, 55);
+        margin-bottom: -5px; /* Add margin-bottom for mobile */
+    }
+    
+    .text-box p {
+        font-size: 15px;
+        margin: 0;
+        margin-top: 0; /* Remove margin-top for mobile */
+    }
+
+    .main-image {
+        width: 90vw;
+        
+        
+    }
+    
+    .bottom-image {
+        width: 90vw;
+        margin-top: 20px;
+    }
+
+    .image-grid {
+        width: 90vw;
+    }
+    .how-its-made .image-grid {
+        padding: 0;
+}
+}
