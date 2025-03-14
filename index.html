@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full-Screen Half-Oval Layout</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="header.css">
-    <link rel="stylesheet" href="../styles/global.css">
-    
+    <title>JWK portefolio</title>
+    <link rel="stylesheet" href="styles/ball.css">
+    <link rel="stylesheet" href="styles/style.css">
+  
 </head>
 <body>
     <nav id="desktop-nav">
@@ -15,125 +14,49 @@
             <a href="index.html">JWK</a>
         </div>
         <div class="mode-container">
-           
+            
             <div class="button-container">
                 
-                <button class="btn1 btn-color-4" onclick="location.href='../index.html'">Til Forside</button>
+                <button class="btn2 btn-color-4" onclick="location.href='tiles/index.html'">Til produktside</button>
             </div>
-        
         </div>
-              <button class="menu-btn" id="menuButton">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </button>
-        
-            <!-- Dropdown Menu -->
-            <div class="dropdown-menu" id="dropdownMenu">
-                <a href="../about.html">Om meg</a>
-                <a href="../contact.html">Kontakt info</a>
-            </div>
+        <div id="socials-container">
+            <img
+                src="./pictures/index/Instagram_logo.png"
+                alt="My instagram account"
+                class="icon"
+                onclick="window.open('https://www.instagram.com/made_by_jwk/', '_blank');"
+            />
+        </div>
     </nav>
 
-    <!-- Sections with Inverted Oval Order -->
-    <div class="section toggleClipSection">
-        <div class="oval">
-            <img src="../pictures/index/oval.jpg" alt="Oval " class="toggleClip img-oval-1">
-        </div>
-        <div class="text-box">
-            <div class="description">Oval</div>
-            <div class="small-description">En høyttaler laget i heltre furu designet for å passe inn i ditt hjem.</div>
-        </div>
-        <button id="exploreButton" class="hidden" onclick="location.href='../oval.html'">Explore</button>
-    </div>
+    <main>
+        <section id="profile">
+            <div class="section__pic-container">
+                <img src="pictures/index/meg.jpg" alt="profilbilde" />
+                
+            </div>
+            <div class="section__text">
+                <p class="section__text__p1">Hei, velkommen til min portefølje! </p>
+                <h1 class="title">Johannes Worren Kløcker</h1>
+                <p class="section__text__p2">Designer</p>
+                <p class="section__text__p2">Kreativt arbeid</p>
+                <p class="section__text__p2">Problemløser</p>
+                <div class="btn-container">
+                    <button class="btn btn-color-2" onclick="location.href='about.html'">About</button>
+                    <button class="btn btn-color-1" onclick="location.href='contact.html'">Contact Info</button>
+                </div>
+                <div class="ballinfo">
+                    <p>Trykk på en ball for lære mer om produktet, eller gå til produkside</p>
+                    <p>Dra rundt på ballene for for litt morro</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <div class="section toggleClipSection">
-        <div class="oval">
-            <img src="../pictures/index/front_without.jpg" alt="woddy" class="toggleClip img-woddy">
-        </div>
-        <div class="text-box">
-            <div class="description">Woody</div>
-            <div class="small-description">En høyttaler laget i heltre indian rosewood. </div>
-        </div>
-        <button id="exploreButton" class="hidden" onclick="location.href='../woody.html'">Explore</button>
-    </div>
-
-    <div class="section toggleClipSection">
-        <div class="oval">
-            <img src="../pictures/index/benk.jpg" alt="benk" class="toggleClip img-oval-2">
-        </div>
-        <div class="text-box">
-            <div class="description">Terrarium benk</div>
-            <div class="small-description">En benk kombinert med et terrarium i Indian Rosewood. </div>
-        </div>
-        <button id="exploreButton" class="hidden" onclick="location.href='../benk.html'">Explore</button>
-    </div>
-
-    <div class="section toggleClipSection">
-        <div class="oval">
-            <img src="../pictures/index/ludo.jpg" alt="ludo" class="toggleClip img-oval-3">
-        </div>
-        <div class="text-box">
-            <div class="description">Ludo-bok</div>
-            <div class="small-description">En brettspill gjenfødt som et vakkert funkjsonelt dekorelemnt i eik.   </div>
-        </div>
-        <button id="exploreButton" class="hidden" onclick="location.href='../ludo.html'">Explore</button>
-    </div>
-
-    <div class="section toggleClipSection">
-        <div class="oval">
-            <img src="../pictures/index/stolen.jpg" alt="stolen" class="toggleClip img-oval-5">
-        </div>
-        <div class="text-box">
-            <div class="description">Metall stol</div>
-            <div class="small-description">En stol i metall med egen ryggrad kombinert med elektrisk fot.</div>
-        </div>
-        <button id="exploreButton" class="hidden" onclick="location.href='../stolen.html'">Explore</button>
-    </div>
-
-    <div class="section toggleClipSection">
-        <div class="oval">
-            <img src="../pictures/index/dorhondtak.jpg" alt="dorhandle" class="toggleClip img-oval-4">
-        </div>
-        <div class="text-box">
-            <div class="description">Dør-håndtak </div>
-            <div class="small-description">Et dørhåndtak som viser vei for alle. </div>
-        </div>
-        <button id="exploreButton" class="hidden" onclick="location.href='../doorhandle.html'">Explore</button>
-    </div>
-
-  
-    <style>
-        .section:last-of-type {
-            margin-bottom: 40px; /* Add space between the last section and the footer */
-        }
-    </style>
-
-<script>
-    const menuButton = document.getElementById('menuButton');
-    const dropdownMenu = document.getElementById('dropdownMenu');
-
-    menuButton.addEventListener('click', () => {
-        menuButton.classList.toggle('active');
-        dropdownMenu.classList.toggle('active');
-    });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (event) => {
-        if (!menuButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
-            menuButton.classList.remove('active');
-            dropdownMenu.classList.remove('active');
-        }
-    });
-</script>
-    <footer>
-        <div id="socials-container">
-            <a href="https://www.instagram.com/made_by_jwk/">Instagram</a>
-        </div>
-        <p> 2025 - All rights reserved</p>
-    </footer>
+    <div id="gameContainer"></div>
     <script src="script.js"></script>
-    <script src="product.js"></script>
-
+    
+  
 </body>
 </html>
