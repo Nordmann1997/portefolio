@@ -1,20 +1,18 @@
 /* GENERAL */
-
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
   font-family: "Poppins", sans-serif;
-  
 }
 
 html {
   scroll-behavior: smooth;
-
 }
 
 p {
@@ -22,27 +20,9 @@ p {
 }
 
 /* TRANSITION */
-
 a,
 .btn {
   transition: all 300ms ease;
-}
-
-/* DESKTOP NAV */
-
-
-
-
-
-
-section {
-  
-  height: 10vh;
-  margin: 0 5rem;
-  box-sizing: border-box;
-  margin-top: 7vh;
-
-  
 }
 
 /* DESKTOP NAV */
@@ -50,14 +30,13 @@ nav#desktop-nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
   height: 100px;
-  background: #fff;
+  background:none;
   z-index: 100;
-  
 }
 
 nav#desktop-nav > div {
@@ -77,7 +56,7 @@ nav#desktop-nav > .product_name {
   padding-bottom: 40px;
   padding-top: 42px;
   margin: 0 auto;
-  font-family: noto sans Batak;
+  font-family: "Noto Sans Batak", sans-serif;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -87,7 +66,7 @@ nav#desktop-nav > .product_name {
   font-size: 28px;
   font-weight: 600;
   letter-spacing: 1px;
-  margin-left: 23px;
+  margin-left: 40px;
 }
 
 .logo a {
@@ -106,14 +85,11 @@ nav#desktop-nav > .product_name {
   align-items: center;
   gap: 1rem;
   margin-right: 30px;
-  
-  
 }
 
 #socials-container a {
-  color: inherit !important; /* Uses the parent text color */
-  text-decoration: none !important; /* Removes underline */
-  
+  color: inherit !important;
+  text-decoration: none !important;
 }
 
 #socials-container a:hover {
@@ -122,11 +98,10 @@ nav#desktop-nav > .product_name {
 }
 
 .icon {
-  width: 32px; 
+  width: 32px;
   height: 32px;
   cursor: pointer;
   transition: transform 0.3s ease, opacity 0.3s ease;
-  
 }
 
 .icon img {
@@ -138,67 +113,69 @@ nav#desktop-nav > .product_name {
 .icon:hover {
   transform: scale(1.1);
   opacity: 0.8;
- 
-}
-@media (max-width: 768px) {
- .logo {
-  font-size: 20px;
-  }
-
-  .product_name h1 {
-      font-size: 21px;
-      }
-
-  nav#desktop-nav > .product_name {
-    margin-right: 0;
-  }
-
-  footer p {
-    font-size: 10px;
-  }
-
-  footer {
-    display: flex;
-  }
-
-  footer #socials-container {
-    font-size: 10px;
-  }
 }
 
+/* SITE GRID */
+.site {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+}
+
+/* MAIN CONTENT */
+main {
+  grid-area: main;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Vertically center content */
+  min-height: 0;
+}
+
+/* SECTION STYLING */
+section {
+  margin: 0 5rem;
+  box-sizing: border-box;
+  /* Remove fixed height to allow dynamic centering */
+}
 
 /* PROFILE SECTION */
-
-/* Eksisterende stil for profile-seksjonen */
 #profile {
-  display: inline-flex;
+  display: flex;
   justify-content: center;
+  align-items: center; /* Vertically center within itself */
   gap: 5rem;
-  height: 40vh;
-  margin-top: 14vh;
+  height: 40vh; /* Reverted to fixed height to match original size perception */
+ 
+  margin-top: 14vh; /* Offset from top */
 }
 
 .section__pic-container {
-   flex: 0 0 auto;
+  flex: 0 0 auto;
   width: 400px;
   height: 400px;
-
   margin: auto 0;
   border-radius: 50%;
   overflow: hidden;
+  z-index: 0;
+
 }
 
 .section__pic-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  
 }
 
 .section__text {
   align-self: center;
   text-align: center;
 }
-
 
 .section__text p {
   font-weight: 600;
@@ -218,21 +195,18 @@ nav#desktop-nav > .product_name {
   text-align: center;
 }
 
-
 /* ICONS */
-
 .icon {
   cursor: pointer;
   height: 2rem;
 }
 
 /* BUTTONS */
-
 .btn-container {
   display: flex;
   justify-content: center;
   gap: 1rem;
-  margin-top:1rem;
+  margin-top: 1rem;
 }
 
 .btn {
@@ -241,27 +215,19 @@ nav#desktop-nav > .product_name {
   padding: 1rem;
   width: 8rem;
   border-radius: 2rem;
-  border: none; /* Ensure no border */
+  border: none;
   box-shadow: orange 0.1rem 0.1rem 0.3rem;
 }
 
 .btn-color-1,
 .btn-color-2 {
-
+  background: none;
+  color: black;
 }
 
 .btn-color-1:hover,
 .btn-color-2:hover {
   cursor: pointer;
-}
-
-.btn-color-1,
-.btn-color-2:hover {
- background: none;
-  color: black;
-}
-
-.btn-color-1:hover {
   scale: 1.1;
 }
 
@@ -269,59 +235,27 @@ nav#desktop-nav > .product_name {
   background: none;
 }
 
-.btn-color-2:hover {
-  scale: 1.1;
-}
-
-.btn-container {
-  gap: 1rem;
-}
-
-.ballinfo p {
-  font-size: 10px !important;
-}
-
-.ballinfo {
-  padding-top: 2vh;
-}
-
-
-.mode-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  
-}
-
-.mode-container .mode-text {
-  font-size: 1em;
-  margin-bottom: 5px;
-}
-
-
-
-.btn1  {
-  padding: 10px 20px;
+.btn1 {
+  padding: 20px 20px;
   font-size: 0.8em;
   cursor: pointer;
   border-radius: 50px;
   border: none;
   color: white;
-  width: 8rem;
+  width: 10rem;
   margin-right: 10px;
+  background-color: #f0ad4e;
 }
 
-.btn2  {
-  padding: 10px 20px;
-  font-size: 0.8em;
+.btn2 {
+  padding: 13px 29px;
+  font-size: 0.9em;
   cursor: pointer;
   border-radius: 50px;
   border: none;
   color: white;
-  width: 8rem;
+  background-color: #f0ad4e;
+  
   
 }
 
@@ -336,99 +270,146 @@ nav#desktop-nav > .product_name {
 }
 
 .btn-color-3 {
-  background-color: #f0ad4e; /* Fun-stil */
+  background-color: #f0ad4e;
 }
 
-.button-container .btn-color-4 {
-  background: none; /* Serious-stil */
-  border: black 2px solid; 
-  color : black;
-  border-radius: 0.1px;
-}
 
 .btn-color-4 {
-  background-color: #f0ad4e; /* Fun-stil */ /* Serious-stil, definert for referanse */
+  background-color: #f0ad4e;
+}
+
+.ballinfo p {
+  font-size: 10px !important;
+}
+
+.ballinfo {
+  padding-top: 2vh;
+}
+
+.mode-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mode-container .mode-text {
+  font-size: 1em;
+  margin-bottom: 5px;
 }
 
 /* FOOTER SECTION */
+footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #272727;
+  color: white;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 10;
+  position: relative;
+}
 
+footer p {
+  margin: 0;
+  font-size: 10px;
+  color: #ffffff;
+  text-align: center;
+}
 
-
+/* RESPONSIVE DESIGN */
 @media (max-width: 768px) {
-  /* Fjern den generelle section-regelen hvis den påvirker #profile */
-  /* 
-  section {
-    height: 10vh;
-    margin: 0 2rem;
-    box-sizing: border-box;
-    margin-top: 7vh;
+  .logo {
+    font-size: 20px;
+    margin-left:20px;
   }
-  */
 
-  /* Bruk spesifikke regler for #profile */
+  .product_name h1 {
+    font-size: 21px;
+  }
+
+  nav#desktop-nav > .product_name {
+    margin-right: 0;
+  }
+
+  footer p {
+    font-size: 10px;
+  }
+
+  footer {
+    padding: 15px;
+  }
+
   #profile {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;  /* Sentrerer innholdet vertikalt */
     gap: 1rem;
     padding: 1rem;
-    margin-top: 12vh; /* Eller fjern om du ønsker at #profile skal være sentrert i main */
+    margin-top: 13vh; /* Reduced from 12vh to eliminate excess space */
   }
 
-  /* Gjør bildecontaineren mindre og sentrert */
   .section__pic-container {
-    width: 80%; 
+    width: 80%;
     max-width: 200px;
     height: auto;
     aspect-ratio: 1;
     margin: 0 auto;
     flex: 0 0 auto;
-    /* Fjern eventuelle ekstra marginer hvis de ikke trengs */
   }
-  
-  /* Bildet fyller containeren */
+
   .section__pic-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
-  
-  /* Gjør teksten mindre og sentrert */
+
   .section__text {
     text-align: center;
     padding: 0 1rem;
   }
-  
+
   .section__text .title {
-    font-size: 1.5rem;   /* Mindre overskrift */
+    font-size: 1.5rem;
   }
-  
+
   .section__text p {
-    font-size: 1rem;   /* Mindre paragrafstørrelse */
+    font-size: 1rem;
   }
+
   #exploreButton {
     font-size: 1.2em;
     padding: 15px 30px;
     width: 50vw;
-}
-.mode-container .btn2 {
-    padding: 7px 20px;
-    font-size: 0.5em;
+  }
+
+  .mode-container .btn2 {
+    padding: 12px 20px;
+    font-size: 0.6em;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    width: 7.5rem;
+    font-weight:600 ;
+  }
+
+  .mode-container .btn1 {
+    padding: 10px 20px;
+    font-size: 0.6em;
     cursor: pointer;
     color: black;
-    width: 5rem;
+    width: 7rem;
+    font-weight:1000 ;
+  }
+  main {
+    grid-area: main;
+    display: block;
+    justify-content: center;
+    align-items: center; /* Vertically center content */
+    min-height: 0;
+  }
 }
-
-.mode-container {
-  margin-top: -35px;
-}
-.mode-container .btn1 {
-    padding: 7px 20px;
-    font-size: 0.5em;
-    cursor: pointer;
-    color: black;
-    width: 5rem;
-}
-}
-
