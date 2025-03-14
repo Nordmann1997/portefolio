@@ -22,118 +22,6 @@ html {
         "footer";
 }
 
-/* Kontaktseksjon */
-.contact-section {
-    max-width: 900px;
-    margin: 80px auto;
-    padding: 0 20px;
-}
-
-.contact-section h1 {
-    font-size: 42px;
-    font-weight: 400;
-    color: #222;
-    margin-bottom: 40px;
-    letter-spacing: 0.5px;
-}
-
-.contact-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 50px;
-    flex-wrap: wrap;
-}
-
-/* Kort-styling for info og form */
-.card {
-    flex: 1;
-    min-width: 320px;
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-}
-
-.contact-info h2, .contact-form h2 {
-    font-size: 26px;
-    font-weight: 400;
-    color: #222;
-    margin-bottom: 20px;
-}
-
-.contact-info p {
-    font-size: 16px;
-    color: #555;
-    margin: 15px 0;
-    text-align: left;
-}
-
-.contact-info a {
-    color: #007bff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.contact-info a:hover {
-    color: #0056b3;
-    text-decoration: underline;
-}
-
-/* Formular-styling */
-.contact-form label {
-    display: block;
-    font-size: 16px;
-    color: #333;
-    margin-bottom: 8px;
-    text-align: left;
-    font-weight: 300;
-}
-
-.contact-form input, .contact-form textarea {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 20px;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    font-size: 16px;
-    background-color: #f9f9f9;
-    box-sizing: border-box;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-form input:focus, .contact-form textarea:focus {
-    border-color: #007bff;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
-    outline: none;
-}
-
-.contact-form textarea {
-    resize: vertical;
-}
-
-.contact-form button {
-    background-color: #007bff;
-    color: #fff;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: 400;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.contact-form button:hover {
-    background-color: #0056b3;
-    transform: scale(1.05);
-}
-
 /* Container and About Page Specific Styles */
 .container {
     width: 90vw;
@@ -146,7 +34,7 @@ section {
     display: flex;
     align-items: flex-start;
     margin-bottom: 40px;
-    border-left: 3px solid black; /* Fixed syntax */
+    
 }
 
 .line {
@@ -165,7 +53,7 @@ h1, h2 {
     margin-bottom: 10px;
     text-align: left;
     font-weight: 400;
-    color: rgb(0, 0, 0);
+    color:rgb(224, 127, 61);
 }
 
 ul {
@@ -185,36 +73,179 @@ ul li {
     color: rgb(0, 0, 0);
 }
 
+.profile-img img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* About Header Section */
+.about-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 80%;
+}
+
+.about-intro {
+    flex: 1;
+    margin-right: 20px; /* Add space between text and image */
+    
+    padding-left: 25px;
+    height: 250px;
+    align-content: center;
+    
+    border-left: 3px rgb(177, 177, 177) solid;
+}
+
+.about-intro h1 {
+    font-size: 3rem;
+    font-weight: 600;
+    color: rgb(224, 127, 61);
+    margin-bottom: 10px;
+}
+
+.about-intro p {
+    font-size: 1.2rem;
+}
+
+.about-image {
+    flex-shrink: 0; /* Prevent image from shrinking */
+    margin-left:100px;
+}
+
+.about-image img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 0%;
+
+}
+
+/* About Details Section */
+.about-details {
+    padding: 20px;
+    font-size: 1rem;
+    
+    border-left: 3px rgb(177, 177, 177) solid;
+
+    padding-left: 25px;
+    margin-left: 20px;
+    
+}
+
+/* Skills and Hardware Section */
+.skills-hardware {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+}
+
+.skills, .hardware {
+    flex: 1;
+    margin-right: 20px;
+   
+    border-left: 3px rgb(177, 177, 177) solid;
+
+    padding-left: 25px;
+}
+
+.skills h2, .hardware h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: rgb(224, 127, 61);
+    margin-bottom: 10px;
+}
+
+.skills ul, .hardware ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skills ul li, .hardware ul li {
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+
+/* Quote Section */
+.quote {
+    flex: 1;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: rgb(143, 143, 143);
+    text-align: right;
+}
+.quote p {
+    
+    color: rgb(143, 143, 143);
+    
+
 /* Responsivitet */
 @media (max-width: 768px) {
-    .contact-container {
-        flex-direction: column;
-        gap: 30px;
+
+    .about-intro h1 {
+        font-size: 2.0rem;
+        font-weight: 600;
+        color: rgb(224, 127, 61);
+        margin-bottom: 10px;
     }
-
-   
-        .logo {
-            font-size: 20px;
-            margin-left: 0px;
-        }
-
-    .contact-section {
-        margin: 60px auto;
-    }
-
-    .contact-section h1 {
-        font-size: 36px;
-    }
-
-    #desktop-nav {
-        padding: 10px 20px;
-    }
-
-    .site {
-        min-height: 100dvh; /* Reaffirm full height on mobile */
+    
+    .about-intro p {
+        font-size: 1.1rem;
+        font-weight: 400;
     }
 
     .container {
         margin: 20px 0 0 20px; /* Adjusted for mobile */
+    }
+
+    .about-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .about-header {
+       
+        align-items: center;
+        width: 100%;
+        flex-direction: column-reverse;
+    }
+
+    .about-intro {
+        margin-right: 0;
+        margin-bottom: 20px;
+        height: auto;
+    }
+
+    .about-image {
+        margin-left: 0;
+       margin-bottom: 30px;
+        align-content: center;
+        
+    }
+
+    .about-image img {
+        width: 250px;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 0%;
+    
+    }
+
+    .skills-hardware {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .skills, .hardware {
+        margin-right: 0;
+        margin-bottom: 50px;
+    }
+
+    .quote {
+        text-align: left;
     }
 }
