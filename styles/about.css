@@ -86,7 +86,7 @@ ul li {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    width: 80%;
+    width: 95%;
 }
 
 .about-intro {
@@ -113,7 +113,7 @@ ul li {
 
 .about-image {
     flex-shrink: 0; /* Prevent image from shrinking */
-    margin-left:100px;
+    margin-left:50px;
 }
 
 .about-image img {
@@ -185,7 +185,7 @@ ul li {
     
 
 /* Responsivitet */
-@media (max-width: 768px) {
+@media (max-width: 778px) {
 
     .about-intro h1 {
         font-size: 2.0rem;
