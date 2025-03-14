@@ -5,7 +5,7 @@ document.addEventListener("keydown", (event) => {
     letter.style.left = `${Math.random() * window.innerWidth}px`;
     letter.style.top = `-50px`;
     letter.style.fontSize = "40px";
-    letter.style.color = "black";  // Change color to black
+    letter.style.color = "black";
     letter.style.opacity = "1";
     letter.style.transition = "transform 3s ease-in, opacity 3s ease-in";
     document.body.appendChild(letter);
@@ -20,10 +20,10 @@ document.addEventListener("keydown", (event) => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Opprett "Let It Fall!"-knapp
+    // Create "Clean up" button
     const fallButton = document.createElement("button");
     fallButton.textContent = "Clean up";
-    fallButton.style.position = "fixed";
+    fallButton.style.position = "absolute";
     fallButton.style.top = "30px";
     fallButton.style.right = "30px";
     fallButton.style.padding = "10px 20px";
@@ -35,42 +35,77 @@ document.addEventListener("DOMContentLoaded", () => {
     fallButton.style.zIndex = "1000";
     document.body.appendChild(fallButton);
 
-    // Når knappen trykkes, starter effekten
+    // When button is clicked, start the falling effect
     fallButton.addEventListener("click", () => {
-        document.querySelectorAll("h1, h2, p, span, li").forEach((el) => {
-            // Change the existing text to white
-            el.style.color = "white";
-            el.style.listStyleType = "none"; // Remove bullet point from li elements
+        const elementsToFall = document.querySelectorAll("main, footer, .about-image img");
+        const fallDuration = 3000; // Matches the 3s transition duration
 
-            // Create a new identical element
+        elementsToFall.forEach((el) => {
+            // Clone the element
             let newEl = el.cloneNode(true);
+            const rect = el.getBoundingClientRect();
+
+            // Ensure the cloned element matches the original exactly
             newEl.style.position = "absolute";
-            newEl.style.top = `${el.getBoundingClientRect().top}px`;
-            newEl.style.left = `${el.getBoundingClientRect().left}px`;
-            newEl.style.width = `${el.offsetWidth}px`;
-            newEl.style.height = `${el.offsetHeight}px`;
-            newEl.style.color = "black"; // Set the color of the new element to black
-            newEl.style.fontSize = window.getComputedStyle(el).fontSize; // Match font size
-            newEl.style.fontWeight = window.getComputedStyle(el).fontWeight; // Match font weight
-            newEl.style.fontFamily = window.getComputedStyle(el).fontFamily; // Match font family
-            newEl.style.listStyleType = "none"; // Remove bullet point from new li elements
+            newEl.style.top = `${rect.top + window.scrollY}px`; // Account for scroll position
+            newEl.style.left = `${rect.left + window.scrollX}px`;
+            newEl.style.width = `${rect.width}px`; // Use rect.width to capture rendered width
+            newEl.style.height = `${rect.height}px`;
+            newEl.style.margin = "0"; // Remove any margins that might affect positioning
+            newEl.style.padding = "0"; // Remove padding
+            newEl.style.boxSizing = "border-box";
+
+            // If the element is an image, ensure it maintains its aspect ratio and styling
+            if (el.tagName === "IMG") {
+                newEl.style.objectFit = window.getComputedStyle(el).objectFit; // Copy object-fit
+                newEl.style.borderRadius = window.getComputedStyle(el).borderRadius; // Copy border-radius
+                newEl.style.boxSizing = window.getComputedStyle(el).boxSizing; // Copy box-sizing
+            }
+
+            newEl.style.transition = "transform 3s ease-in";
+            newEl.style.transform = "translateY(0)"; // Initial position
             document.body.appendChild(newEl);
 
-            let velocityY = 0;
-            let gravity = 0.1;
-            function fall() {
-                velocityY += gravity;
-                let currentY = parseFloat(newEl.style.top || 0);
-                let newY = currentY + velocityY;
+            // Start the falling animation
+            setTimeout(() => {
+                newEl.style.transform = `translateY(100vh)`;
+            }, 10);
 
-                if (newY > window.innerHeight) {
-                    newEl.remove(); // Remove the element when it reaches the bottom
-                    return; // Stopper når teksten er ute av skjermen
-                }
-                newEl.style.top = `${newY}px`;
-                requestAnimationFrame(fall);
-            }
-            fall();
+            // Remove the cloned element after animation
+            setTimeout(() => {
+                newEl.remove();
+            }, fallDuration);
+
+            // Hide the original element
+            el.style.visibility = "hidden";
         });
+
+        // Create and display typewriter text after elements have fallen
+        const typewriterText = document.createElement("div");
+        typewriterText.style.position = "fixed";
+        typewriterText.style.top = "50%";
+        typewriterText.style.left = "50%";
+        typewriterText.style.transform = "translate(-50%, -50%)";
+        typewriterText.style.fontSize = "5rem";
+        typewriterText.style.color = "black";
+        typewriterText.style.fontFamily = "Poppins, sans-serif";
+        typewriterText.style.zIndex = "1000";
+        document.body.appendChild(typewriterText);
+
+        // Delay the typewriter effect until elements have fallen out of view
+        setTimeout(() => {
+            let text = "Clean";
+            let index = 0;
+
+            function typeWriter() {
+                if (index < text.length) {
+                    typewriterText.textContent += text.charAt(index);
+                    index++;
+                    setTimeout(typeWriter, 250);
+                }
+            }
+
+            typeWriter();
+        }, fallDuration); // Wait for the falling animation to complete (3 seconds)
     });
 });
