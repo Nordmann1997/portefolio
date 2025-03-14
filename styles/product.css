@@ -1,0 +1,387 @@
+/* GENERAL */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+p {
+  color: rgb(85, 85, 85);
+  font-family: Poppins;
+}
+
+
+
+
+
+
+
+
+
+body {
+    font-family: poppins;
+    margin: 0;
+    padding: 0;
+   
+    text-align: center;
+}
+
+
+p {
+    
+    
+    font-size: 15px;
+    font-family: poppins;
+    color: black;
+    text-align: left;
+}
+
+
+h1 {
+    font-size: 25px;
+    
+}
+
+
+
+.main-image {
+    width: 93vw;
+    border-radius: 5px;
+    
+    
+}
+
+.bottom-image {
+    width: 93vw;
+    margin-top: 30px;
+    box-shadow: 0 0 16px 2px rgb(193, 193, 193);
+    border-radius: 5px;
+
+}
+
+.description {
+    max-width: 600px;
+    margin: 20px auto;
+    font-size: 18px;
+    color: #333;
+    text-align: left;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* To kolonner */
+    grid-template-rows: repeat(3, auto); /* Tre rader */
+    gap: 30px;
+    justify-items: center;
+    max-width: 93vw;
+    margin: 0 auto;
+    padding-top: 30px;
+    width: 100%; /* Ensure it takes full width */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.image-grid img,
+.image-grid video {
+    width: 100%;
+    box-shadow: 0 5px 16px 1px rgb(207, 207, 207);
+    width: 100%;
+    border-radius: 5px;
+   
+    object-fit: cover;
+    ;
+    
+    
+}
+
+.description-box {
+    text-align: left;
+    max-width: 100%;
+    display: flex;
+    flex-direction: auto;
+    justify-content: center;
+    align-items: center;
+    line-height: 2;
+    grid-column: 1 / 3; /* Plasseres i høyre kolonne */
+    grid-row: 1 / 2; /* På samme rad som "åpen høyttaler"-bildet */
+    width: 100%; /* Ensure it takes full width */
+    box-sizing: border-box; /* Include padding in width calculation */
+   
+    }
+
+    .text-box h3 {
+        font-size: 19px;
+        margin-top: 5px;
+        font-weight: bold;
+        color:rgb(224, 127, 61);
+        margin-bottom: -5px; /* Add margin-bottom for mobile */
+    }
+
+
+.description-box p {
+    width: 100%;
+    
+   
+    }
+    
+
+
+/* Plasserer beskrivelsen i grid-systemet */
+.description-box {
+    grid-column: 1 / 3; /* Plasseres i høyre kolonne */
+    grid-row: 1 / 2; /* På samme rad som "åpen høyttaler"-bildet */
+}
+
+
+/* Generell styling for seksjonen */
+.how-its-made {
+    margin-top: 40px;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.how-its-made h1 {
+    font-size: 30px;
+    font-weight: 400;
+    padding-bottom: 50px;
+    color: 80 ,80, 80;
+}
+
+/* Flex for å stable process-step-elementene vertikalt */
+.how-its-made .image-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0; /* Remove gap to ensure edge-to-edge alignment */
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 35px; /* Add padding to the sides */
+    
+}
+
+/* Styling for hver process-step */
+.process-step {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    width: 100%;
+    
+    box-sizing: border-box;
+    height: auto;
+    flex-direction: row;
+    margin-bottom: 30px;
+    box-shadow: 0 0 16px 2px rgb(226, 225, 225);
+    padding:3%;
+    border-radius: 5px;
+    background-image: linear-gradient(to right, rgb(255, 255, 255), rgb(230, 230, 230));
+    
+   
+}
+
+/* For odd process-steps, place the image on the left side */
+.process-step:nth-child(odd) {
+    flex-direction: row;
+}
+
+/* For even process-steps, place the image on the right side */
+.process-step:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+/* Bilder og video */
+.process-step img,
+.process-step video {
+    width: 50%; /* Ensure images take half the width */
+    height: 100%; /* Ensure images take full height */
+    object-fit: cover;
+    transition: all 0.5s;
+}
+
+/* Tekstboks */
+.text-box {
+    width: 43%; /* Ensure text boxes take half the width */
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px; /* Add padding for text */
+    line-height: 2;
+}
+
+/* Responsivitet for mobil */
+@media (max-width: 768px) {
+    .process-step {
+        display: flex;
+        flex-direction: column !important; /* Forces image above text */
+        align-items: center;
+        text-align: left;
+        width: 100%;
+        padding: 5%;
+        
+        margin-bottom: 20px !important; /* Ensures spacing between steps */
+    }
+
+    .process-step img,
+    .process-step video {
+        width: 100% !important; /* Forces full width */
+        height: auto !important;
+        margin-bottom: 15px !important; /* Space between image and text */
+    }
+
+    .text-box {
+        width: 100% !important;
+        text-align: left;
+        padding: 0 10px;
+    }
+
+    .text-box p {
+        margin: 0 !important; /* Removes unnecessary extra spacing */
+    }
+
+
+
+
+    .description-box {
+        grid-column: 1 / -1; /* Tar opp hele bredden */
+        grid-row: 1 / 2; /* Plasseres under hovedbildet */
+        width: 100%; /* Ensure it takes full width */
+        box-sizing: border-box; /* Include padding in width calculation */
+    }
+
+    .how-its-made .image-grid {
+        flex-direction: column; /* Stable process-step-elementene vertikalt */
+    }
+
+    .image-grid {
+        grid-template-columns: 1fr; /* En kolonne */
+        grid-template-rows: auto; /* Automatisk høyde */
+        width: 100%; /* Ensure it takes full width */
+        box-sizing: border-box; /* Include padding in width calculation */
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .text-box h3 {
+        font-size: 19px;
+        margin-top: 5px;
+        font-weight: bold;
+        
+        margin-bottom: -5px; /* Add margin-bottom for mobile */
+    }
+    
+    .text-box p {
+        font-size: 15px;
+        margin: 0;
+        margin-top: 0; /* Remove margin-top for mobile */
+    }
+
+    .main-image {
+        width: 90vw;
+        
+        
+    }
+    
+    .bottom-image {
+        width: 90vw;
+        margin-top: 20px;
+    }
+
+    .image-grid {
+        width: 90vw;
+    }
+    .how-its-made .image-grid {
+        padding: 0;
+}
+}
+
+.three-images {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px; /* Add margin to create space between images and text */
+    overflow: hidden; /* Hide overflow for sliding effect */
+    position: relative; /* Position relative for sliding */
+    touch-action: pan-y; /* Enable horizontal swipe */
+}
+
+.three-images img {
+    width: 32%; /* Ensure images take up equal space */
+    height: auto;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.5s ease; /* Smooth transition for sliding */
+}
+
+/* Add navigation buttons for sliding */
+.three-images .nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+    border-radius: 50%; /* Make buttons round */
+    width: 40px; /* Set width for round shape */
+    height: 40px; /* Set height for round shape */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.three-images .nav-button.prev {
+    left: 10px;
+}
+
+.three-images .nav-button.next {
+    right: 10px;
+}
+
+/* Responsivitet for mobil */
+@media (max-width: 768px) {
+    .three-images {
+        overflow: hidden; /* Hide overflow for sliding effect */
+    }
+
+    .three-images img {
+        width: 100%; /* Ensure images take full width */
+        height: auto;
+        object-fit: cover;
+        border-radius: 5px;
+        transition: transform 0.5s ease; /* Smooth transition for sliding */
+    }
+
+    .three-images .nav-button {
+        display: block; /* Show navigation buttons on mobile */
+    }
+}
+
+.process-step.three-images-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.process-step.three-images-container .text-box {
+    width: 100%;
+    padding: 10px;
+    
+}
+
+

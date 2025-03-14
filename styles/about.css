@@ -1,0 +1,220 @@
+/* Grunnleggende reset og typografi */
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+.site {
+    min-height: 100dvh;
+    display: grid;
+    grid-template-rows: auto 1fr auto; /* Fixed typo: '1ft' to '1fr' */
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer";
+}
+
+/* Kontaktseksjon */
+.contact-section {
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 0 20px;
+}
+
+.contact-section h1 {
+    font-size: 42px;
+    font-weight: 400;
+    color: #222;
+    margin-bottom: 40px;
+    letter-spacing: 0.5px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+/* Kort-styling for info og form */
+.card {
+    flex: 1;
+    min-width: 320px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h2, .contact-form h2 {
+    font-size: 26px;
+    font-weight: 400;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 16px;
+    color: #555;
+    margin: 15px 0;
+    text-align: left;
+}
+
+.contact-info a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Formular-styling */
+.contact-form label {
+    display: block;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 8px;
+    text-align: left;
+    font-weight: 300;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Container and About Page Specific Styles */
+.container {
+    width: 90vw;
+    margin: 40px 0 0 41px;
+    min-height: 80vh; /* Changed from height: 80vh to allow growth */
+    /* Alternatively: height: auto; if you don’t need a minimum */
+}
+
+section {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 40px;
+    border-left: 3px solid black; /* Fixed syntax */
+}
+
+.line {
+    width: 4px;
+    background-color: rgb(0, 0, 0);
+    height: 100%;
+    margin-right: 20px;
+}
+
+.content {
+    flex: 1;
+    /* Fixed syntax error: border-left: 1px solid rgb(255, 255, 255); if intended */
+}
+
+h1, h2 {
+    margin-bottom: 10px;
+    text-align: left;
+    font-weight: 400;
+    color: rgb(0, 0, 0);
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+ul li {
+    margin-bottom: 5px;
+    text-align: left;
+    color: rgb(0, 0, 0);
+}
+
+.container p {
+    text-align: left;
+    color: rgb(0, 0, 0);
+}
+
+/* Responsivitet */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+   
+        .logo {
+            font-size: 20px;
+            margin-left: 0px;
+        }
+
+    .contact-section {
+        margin: 60px auto;
+    }
+
+    .contact-section h1 {
+        font-size: 36px;
+    }
+
+    #desktop-nav {
+        padding: 10px 20px;
+    }
+
+    .site {
+        min-height: 100dvh; /* Reaffirm full height on mobile */
+    }
+
+    .container {
+        margin: 20px 0 0 20px; /* Adjusted for mobile */
+    }
+}
