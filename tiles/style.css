@@ -178,8 +178,9 @@ body {
     border-radius: 50px;
     border: none;
     color: white;
-    width: 8rem;
+    width: 9rem;
     margin-left: 10px;
+    border-radius: 0.1px;
   }
   
   .btn2  {
@@ -189,8 +190,8 @@ body {
     border-radius: 50px;
     border: none;
     color: white;
-    width: 8rem;
-    
+    width: 9rem;
+
   }
   
   .btn1:hover {
@@ -211,7 +212,7 @@ body {
     background: none; /* Serious-stil */
     border: black 2px solid; 
     color : black;
-    border-radius: 0.1px;
+    
   }
   
   .btn-color-4 {
@@ -250,21 +251,21 @@ body {
         width: 50vw;
     }
     .mode-container .btn2 {
-        padding: 7px 20px;
+        padding: 10px 20px;
         font-size: 0.5em;
         cursor: pointer;
         color: black;
-        width: 5rem;
+        width: 6rem;
     }
     .mode-container .btn1 {
-        padding: 7px 20px;
+        padding: 10px 20px;
         font-size: 0.5em;
         cursor: pointer;
         color: black;
-        width: 5rem;
+        width: 7rem;
     }
     .mode-container {
-        margin-top: -35px;
+        
       }
     .oval:hover {
         transform: none;
