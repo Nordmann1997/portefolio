@@ -202,7 +202,7 @@ h1 {
 .process-step img,
 .process-step video {
     width: 50%; /* Ensure images take half the width */
-    
+    height: 100%; /* Ensure images take full height */
     object-fit: cover;
     transition: all 0.5s;
 }

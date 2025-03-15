@@ -140,7 +140,7 @@ body {
     cursor: pointer;
     transition: all 0.3s ease;
     z-index: 20;    
-    border-radius: 50px;
+    border-radius: 10px;
 }
 
 #exploreButton:hover {
@@ -179,8 +179,8 @@ body {
     border: none;
     color: white;
     width: 9rem;
-    
-    
+    margin-left: 10px;
+    border-radius: 0.1px;
   }
   
   .btn2  {

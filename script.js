@@ -170,12 +170,12 @@ function createWorld() {
     let ballSize = (ballSizeVW / 100) * window.innerWidth; // Konverter til piksler
 
     gameObjects = [
-        new Ball(100, 50, 50, 0, ballSize / 2, '../pictures/index/ball/benk.jpg', 'benk.html'),
-        new Ball(400, 100, -50, 0, ballSize / 2, '../pictures/index/ball/dorhondtak.jpg', 'doorhandle.html'),
-        new Ball(700, 150, 0, 50, ballSize / 2, '../pictures/index/ball/ludo.jpg', 'ludo.html'),
-        new Ball(900, 200, 30, 30, ballSize / 2, '../pictures/index/ball/front_without.jpg', 'magnet.html'),
-        new Ball(1100, 250, -30, 40, ballSize / 2, '../pictures/index/ball/oval.jpg', 'oval.html'),
-        new Ball(1300, 300, 20, -20, ballSize / 2, '../pictures/index/ball/stolen.jpg', 'stolen.html') // Ny ball
+        new Ball(100, 50, 50, 0, ballSize / 2, 'pictures/index/ball/benk.jpg', 'benk.html'),
+        new Ball(400, 100, -50, 0, ballSize / 2, 'pictures/index/ball/dorhondtak.jpg', 'doorhandle.html'),
+        new Ball(700, 150, 0, 50, ballSize / 2, 'pictures/index/ball/ludo.jpg', 'ludo.html'),
+        new Ball(900, 200, 30, 30, ballSize / 2, 'pictures/index/ball/front_without.jpg', 'woody.html'),
+        new Ball(1100, 250, -30, 40, ballSize / 2, 'pictures/index/ball/oval.jpg', 'oval.html'),
+        new Ball(1300, 300, 20, -20, ballSize / 2, 'pictures/index/ball/stolen.jpg', 'stolen.html') // Ny ball
     ];
 }
 

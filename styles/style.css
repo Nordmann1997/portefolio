@@ -77,7 +77,7 @@ nav#desktop-nav > .product_name {
 }
 
 .logo a:hover {
-  color: #f09c14;
+  color: #0778b1;
 }
 
 #socials-container {
@@ -150,19 +150,18 @@ section {
   align-items: center; /* Vertically center within itself */
   gap: 5rem;
   height: 40vh; /* Reverted to fixed height to match original size perception */
-  margin-top: 14vh;
-   /* Offset from top */
+ 
+  margin-top: 14vh; /* Offset from top */
 }
 
 .section__pic-container {
   flex: 0 0 auto;
-  width: 330px;
-  height: 330px;
+  width: 400px;
+  height: 400px;
   margin: auto 0;
-  border-radius: 10px;
+  border-radius: 50%;
   overflow: hidden;
   z-index: 0;
-  box-shadow: 0 5px 16px 1px rgb(207, 207, 207);
 
 }
 
@@ -205,15 +204,9 @@ section {
 /* BUTTONS */
 .btn-container {
   display: flex;
-  flex-direction: column;
-  align-items: center; /* Center align buttons */
+  justify-content: center;
   gap: 1rem;
   margin-top: 1rem;
-}
-
-.btn-row {
-  display: flex;
-  gap: 1rem;
 }
 
 .btn {
@@ -223,7 +216,7 @@ section {
   width: 8rem;
   border-radius: 2rem;
   border: none;
-  box-shadow: 0.1rem 0.1rem 0.3rem rgb(199, 199, 199);
+  box-shadow: orange 0.1rem 0.1rem 0.3rem;
 }
 
 .btn-color-1,
@@ -255,14 +248,14 @@ section {
 }
 
 .btn2 {
-  padding: 15px;
+  padding: 13px 29px;
   font-size: 0.9em;
   cursor: pointer;
   border-radius: 50px;
   border: none;
   color: white;
   background-color: #f0ad4e;
-  width: 272px;
+  
   
 }
 
@@ -358,7 +351,7 @@ footer p {
     align-items: center;
     gap: 1rem;
     padding: 1rem;
-    margin-top: 9vh; /* Reduced from 12vh to eliminate excess space */
+    margin-top: 13vh; /* Reduced from 12vh to eliminate excess space */
   }
 
   .section__pic-container {
@@ -382,7 +375,7 @@ footer p {
   }
 
   .section__text .title {
-    font-size: 1.9rem;
+    font-size: 1.5rem;
   }
 
   .section__text p {
@@ -395,18 +388,18 @@ footer p {
     width: 50vw;
   }
 
-   .btn2 {
-    padding: 15px 0 15px 0;
-    font-size: 1em;
+  .mode-container .btn2 {
+    padding: 12px 20px;
+    font-size: 0.6em;
     cursor: pointer;
     color: rgb(255, 255, 255);
-    width: 280px;
+    width: 7.5rem;
     font-weight:600 ;
   }
 
-  .btn1 {
-    padding: 4px 40px;
-    font-size: 1em;
+  .mode-container .btn1 {
+    padding: 10px 20px;
+    font-size: 0.6em;
     cursor: pointer;
     color: black;
     width: 7rem;
