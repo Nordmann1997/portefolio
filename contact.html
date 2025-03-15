@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JWK - Kontakt</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/contact.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav id="desktop-nav">
+        <div class="logo">
+            <a href="tiles/index.html">JWK</a>
+        </div>
+    </nav>
+    
+    <main>
+        <div class="video-container">
+            <video autoplay loop muted playsinline>
+                <source src="pictures/contact/hands.mp4" type="video/mp4">
+                Din nettleser støtter ikke video.
+            </video>
+            <div class="overlay">
+                <a href="#" class="contact-button">Kontakt meg</a>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <div id="socials-container">
+            <a href="https://www.instagram.com/made_by_jwk/">Instagram</a>
+        </div>
+        <p> 2025 - All rights reserved</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const button = document.querySelector('.contact-button');
+            
+            // Sett startposisjon til midten av vinduet
+            let currentX = window.innerWidth / 2;
+            let currentY = window.innerHeight / 2;
+            let targetX = currentX; // Startmål er samme som startposisjon
+            let targetY = currentY;
+    
+            // Initialiser knappens posisjon i midten
+            const buttonWidth = button.offsetWidth / 2;
+            const buttonHeight = button.offsetHeight / 2;
+            button.style.position = 'absolute';
+            button.style.left = `${currentX - buttonWidth}px`;
+            button.style.top = `${currentY - buttonHeight}px`;
+    
+            // Lytt til musebevegelser
+            document.body.addEventListener('mousemove', (e) => {
+                targetX = e.clientX;
+                targetY = e.clientY;
+            });
+    
+            // Animasjonsfunksjon for knappen
+            function animate() {
+                currentX += (targetX - currentX) * 0.1;
+                currentY += (targetY - currentY) * 0.1;
+    
+                button.style.left = `${currentX - buttonWidth}px`;
+                button.style.top = `${currentY - buttonHeight}px`;
+    
+                requestAnimationFrame(animate);
+            }
+    
+            // Start knappeanimasjonen
+            animate();
+
+            // Typewriter effect on button click
+            button.addEventListener('click', (e) => {
+                e.preventDefault(); // Prevent default mailto link behavior
+
+                // Create typewriter text element
+                const typewriterText = document.createElement("div");
+                typewriterText.classList.add("typewriter-text");
+                typewriterText.style.position = "fixed";
+                typewriterText.style.top = "10%"; // Position in the upper part of the screen
+                typewriterText.style.left = "50%";
+                typewriterText.style.transform = "translate(-50%, 0)";
+                
+                typewriterText.style.color = "white";
+                typewriterText.style.fontFamily = "Poppins, sans-serif";
+                typewriterText.style.zIndex = "1000";
+                document.body.appendChild(typewriterText);
+
+                // Typewriter effect for email
+                let text = "Jwklocker@hotmail.com";
+                let index = 0;
+
+                function typeWriter() {
+                    if (index < text.length) {
+                        typewriterText.textContent += text.charAt(index);
+                        index++;
+                        setTimeout(typeWriter, 150); // Adjust speed of typing (150ms per character)
+                    }
+                }
+
+                // Start typing effect
+                typeWriter();
+
+                // Remove the text after a few seconds (e.g., 5 seconds)
+               
+            });
+        });
+    </script>
+    <script src="scripts/about.js"></script>
+</body>
+</html>
