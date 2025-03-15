@@ -106,6 +106,16 @@
                
             });
         });
+
+        document.addEventListener("DOMContentLoaded", function () {
+    const video = document.querySelector(".video-container video");
+    if (video) {
+        video.muted = true; // Ensure it is muted
+        video.play().catch(error => console.log("Autoplay failed:", error));
+    }
+});
+
+        
     </script>
     <script src="scripts/about.js"></script>
 </body>
