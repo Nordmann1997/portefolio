@@ -133,7 +133,7 @@ body {
     transform: translateX(-50%);
     width: 20vw;
     padding: 10px 0;
-    font-size: 1.3em;
+    font-size: 1.1em;
     background-color: white;
     color: black;
     border: none;
@@ -144,7 +144,7 @@ body {
 }
 
 #exploreButton:hover {
-    background-color: #025270;
+    background-color: #f7b162;
     color: white;
 }
 
@@ -246,9 +246,9 @@ body {
     }
 
     #exploreButton {
-        font-size: 1.2em;
+        font-size: 1.0em;
         padding: 15px 30px;
-        width: 50vw;
+        width: 55vw;
     }
     .mode-container .btn2 {
         padding: 10px 20px;
