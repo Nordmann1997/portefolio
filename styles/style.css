@@ -420,3 +420,10 @@ footer p {
     min-height: 0;
   }
 }
+
+@media (max-width: 1210px) {
+
+#profile {
+ flex-direction: column;
+ }
+}
