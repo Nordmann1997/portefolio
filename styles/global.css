@@ -93,7 +93,7 @@ nav#desktop-nav > .product_name {
 }
 
 #socials-container {
-    display: none;
+    display: flex;
 }
 
 /* MAIN CONTENT */
@@ -106,7 +106,7 @@ main {
 footer {
     grid-area: footer;
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Center align text */
     align-items: center;
     padding: 20px;
     background-color: #272727;
@@ -118,14 +118,31 @@ footer {
 }
 
 footer #socials-container {
-    display: none;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: absolute;
+    left: 35px; /* Position socials to the left */
+}
+   
+
+
+#socials-container a {
+    color: inherit !important; /* Uses the parent text color */
+    text-decoration: none !important; /* Removes underline */
+    
+}
+
+#socials-container a:hover {
+    color: #0778b1;
+    scale: 1.1;
 }
 
 footer p {
     margin: 0;
     font-size: 10px;
     color: #ffffff;
-    text-align: center;
+    text-align: center; /* Center align text */
 }
 
 .menu-btn {
@@ -159,7 +176,7 @@ footer p {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    padding: 40px;
+    margin-right: 50px;
     position: relative;
     z-index: 10;
     margin-left: auto;
@@ -168,14 +185,14 @@ footer p {
 
 .menu-btn div {
     width: 30px;
-    height: 4px;
-    background: black;
+    height: 3px;
+    background: rgb(102, 102, 102);
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 /* Rotating lines when active */
 .menu-btn.active .line1 {
-    transform: translateY(9px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg);
 }
 
 .menu-btn.active .line2 {
@@ -183,7 +200,7 @@ footer p {
 }
 
 .menu-btn.active .line3 {
-    transform: translateY(-9px) rotate(-45deg);
+    transform: translateY(-8px) rotate(-45deg);
 }
 
 /* Dropdown Menu */
@@ -256,4 +273,15 @@ footer p {
     main {
         min-height: 0; /* Ensure it doesn’t overflow */
     }
+
+    footer #socials-container {
+       
+        left: 20px; /* Position socials to the left */
+    }
+
+    .menu-btn {
+       margin-right: 30px;
+    }
+    
+       
 }
