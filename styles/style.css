@@ -425,5 +425,6 @@ footer p {
 
 #profile {
  flex-direction: column;
+ gap: 4rem;
  }
 }
