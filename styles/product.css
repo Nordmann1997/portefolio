@@ -214,7 +214,7 @@ h1 {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    padding: 20px; /* Add padding for text */
+    /* Add padding for text */
     line-height: 2;
 }
 
@@ -241,7 +241,7 @@ h1 {
     .text-box {
         width: 100% !important;
         text-align: left;
-        padding: 0 10px;
+        
     }
 
     .text-box p {
@@ -380,7 +380,7 @@ h1 {
 
 .process-step.three-images-container .text-box {
     width: 100%;
-    padding: 10px;
+    
     
 }
 
