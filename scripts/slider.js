@@ -3,15 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const images = threeImagesContainer.querySelectorAll('img');
     const prevButton = document.createElement('button');
     const nextButton = document.createElement('button');
-    const swipeIndicator = document.createElement('div');
     let currentIndex = 0;
-    let startX = 0;
-    let endX = 0;
-
-    // Create swipe indicator
-    swipeIndicator.classList.add('swipe-indicator');
-    swipeIndicator.innerHTML = '→ Swipe';
-    threeImagesContainer.appendChild(swipeIndicator);
 
     // Create navigation buttons
     prevButton.classList.add('nav-button', 'prev');
@@ -28,24 +20,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function enableSlider() {
-        threeImagesContainer.addEventListener('touchstart', (e) => {
-            startX = e.touches[0].clientX;
-        });
-
-        threeImagesContainer.addEventListener('touchmove', (e) => {
-            endX = e.touches[0].clientX;
-        });
-
-        threeImagesContainer.addEventListener('touchend', () => {
-            if (startX > endX + 50) {
-                currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
-            } else if (startX < endX - 50) {
-                currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
-            }
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex > 0) ? currentIndex - 1 : images.length - 1;
             updateSlide();
-            swipeIndicator.style.display = 'none'; // Hide swipe indicator after first swipe
-            prevButton.style.display = 'none'; // Hide prev button after first swipe
-            nextButton.style.display = 'none'; // Hide next button after first swipe
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentIndex = (currentIndex < images.length - 1) ? currentIndex + 1 : 0;
+            updateSlide();
         });
 
         updateSlide();
@@ -54,10 +36,6 @@ document.addEventListener('DOMContentLoaded', function() {
     function disableSlider() {
         prevButton.remove();
         nextButton.remove();
-        swipeIndicator.remove();
-        threeImagesContainer.removeEventListener('touchstart', () => {});
-        threeImagesContainer.removeEventListener('touchmove', () => {});
-        threeImagesContainer.removeEventListener('touchend', () => {});
         images.forEach((img) => {
             img.style.transform = 'translateX(0)';
         });
