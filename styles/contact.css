@@ -20,6 +20,28 @@
   opacity: 0.2; /* Senker opasiteten på videoen */
 }
 
+/* Fullskjerm GIF-bakgrunn */
+.gif-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.background-gif {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.2; /* Senker opasiteten på GIF-en */
+}
+
 /* Overlay for å plassere teksten i midten */
 .contact-button {
   /* Sørg for at knappen har en definert størrelse */
