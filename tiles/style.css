@@ -1,435 +1,290 @@
-/* GENERAL */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    font-family: poppins;
+    width: 100vw;
+    height: 100vh; /* Ensure body takes full viewport height */
+    overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
-html {
-  scroll-behavior: smooth;
+/* Seksjoner */
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Ensure section takes full viewport height */
+    max-height: 500px;
+    
 }
 
-p {
-  color: rgb(85, 85, 85);
+.oval {
+    width: 100%;
+    height: auto !important; /* Adjust height based on image */
+    display: flex; /* Makes sure it wraps around the image */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    z-index: 10;
+    
 }
 
-/* TRANSITION */
-a,
-.btn {
-  transition: all 300ms ease;
+/* For odd sections, place the oval on the left side */
+.section:nth-child(odd) .oval {
+    clip-path: polygon(0% 0%, 50% 0%, 50% 100%, 0% 100%);
 }
 
-/* DESKTOP NAV */
-nav#desktop-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100px;
-  background:none;
-  z-index: 100;
+/* For even sections, place the oval on the right side */
+.section:nth-child(even) .oval {
+    clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
 }
 
-nav#desktop-nav > div {
-  display: flex;
-  align-items: center;
+/* Enlarging effect on hover */
+.oval:hover {
+    transform: scale(1.05);
+    z-index: 15;
 }
 
-nav#desktop-nav > .product_name {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  position: relative;
+.oval.toggled {
+    transform: scale(1.05);
+    z-index: 15;
 }
 
-.product_name {
-  padding-bottom: 40px;
-  padding-top: 42px;
-  margin: 0 auto;
-  font-family: "Noto Sans Batak", sans-serif;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
+.section:nth-child(odd) .oval.toggled {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
-.logo {
-  font-size: 28px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  margin-left: 40px;
+.section:nth-child(even) .oval.toggled {
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
-.logo a {
-  text-decoration: none;
-  color: #222;
-  transition: color 0.3s ease;
-  font-family: Arial, Helvetica, sans-serif;
+.section:nth-child(odd) .oval:not(.toggled) {
+    clip-path: polygon(0% 0%, 50% 0%, 50% 100%, 0% 100%);
 }
 
-.logo a:hover {
-  color: #f09c14;
+.section:nth-child(even) .oval:not(.toggled) {
+    clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
 }
 
-#socials-container {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-right: 30px;
-}
+.oval img {
+    width: 100%;
+    height: auto; /* Ensure image maintains aspect ratio */
+    object-fit: cover;
+    min-width: 1700px;
+} 
 
-#socials-container a {
-  color: inherit !important;
-  text-decoration: none !important;
-}
-
-#socials-container a:hover {
-  color: #0473ab;
-  scale: 1.1;
-}
-
-.icon {
-  width: 32px;
-  height: 32px;
-  cursor: pointer;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-}
-
-.icon img {
-  width: 100%;
-  height: 100%;
-  filter: grayscale(100%);
-}
-
-.icon:hover {
-  transform: scale(1.1);
-  opacity: 0.8;
-}
-
-/* SITE GRID */
-.site {
-  min-height: 100dvh;
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  grid-template-columns: minmax(0, 1fr);
-  grid-template-areas: 
-    "header"
-    "main"
-    "footer";
-}
-
-/* MAIN CONTENT */
-main {
-  grid-area: main;
-  display: flex;
-  justify-content: center;
-  align-items: center; /* Vertically center content */
-  min-height: 0;
-}
-
-/* SECTION STYLING */
-section {
-  margin: 0 5rem;
-  box-sizing: border-box;
-  /* Remove fixed height to allow dynamic centering */
-}
-
-/* PROFILE SECTION */
-#profile {
-  display: flex;
-  justify-content: center;
-  align-items: center; /* Vertically center within itself */
-  gap: 5rem;
-  height: 40vh; /* Reverted to fixed height to match original size perception */
-  margin-top: 14vh;
-   /* Offset from top */
-}
-
-.section__pic-container {
-  flex: 0 0 auto;
-  width: 330px;
-  height: 330px;
-  margin: auto 0;
-  border-radius: 10px;
-  overflow: hidden;
-  z-index: 0;
-  box-shadow: 0 5px 16px 1px rgb(207, 207, 207);
-
-}
-
-.section__pic-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  
-}
-
-.section__text {
-  align-self: center;
-  text-align: center;
-}
-
-.section__text p {
-  font-weight: 600;
-  font-size: 20px;
-}
-
-.section__text__p1 {
-  text-align: center;
-}
-
-.section__text__p2 {
-  font-size: 1.75rem;
-  margin-bottom: 0.5rem;
-}
-
-.title {
-  font-size: 3rem;
-  text-align: center;
-  line-height: 1.3;
-}
-
-/* ICONS */
-.icon {
-  cursor: pointer;
-  height: 2rem;
-}
-
-/* BUTTONS */
-.btn-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center align buttons */
-  gap: 1rem;
-  margin-top: 2rem;
-}
-
-.btn-row {
-  display: flex;
-  gap: 1rem;
-}
-
-.btn {
-  font-weight: 600;
-  transition: all 300ms ease;
-  padding: 1rem;
-  width: 8rem;
-  border-radius: 2rem;
-  border: none;
-  box-shadow: 0.1rem 0.1rem 0.3rem rgb(199, 199, 199);
-}
-
-.btn-color-1,
-.btn-color-2 {
-  background: none;
-  color: black;
-}
-
-.btn-color-1:hover,
-.btn-color-2:hover {
-  cursor: pointer;
-  scale: 1.1;
-}
-
-.btn-color-2 {
-  background: none;
-}
-
-.btn1 {
-  padding: 20px 20px;
-  font-size: 0.8em;
-  cursor: pointer;
-  border-radius: 50px;
-  border: none;
-  color: white;
-  width: 10rem;
-  margin-right: 10px;
-  background-color: #f0ad4e;
-}
-
-.btn2 {
-  padding: 15px;
-  font-size: 0.9em;
-  cursor: pointer;
-  border-radius: 50px;
-  border: none;
-  color: white;
-  background-color: #f0ad4e;
-  width: 272px;
-  
-}
-
-.btn1:hover {
-  scale: 1.1;
-  transition: all 300ms ease;
-}
-
-.btn2:hover {
-  scale: 1.1;
-  transition: all 300ms ease;
-}
-
-.btn-color-3 {
-  background-color: #f0ad4e;
+.toggleClip.img-woddy {
+    margin-top: 00px; /* Juster etter behov */
 }
 
 
-.btn-color-4 {
-  background-color: #f0ad4e;
+    
+
+/* Text Box */
+.text-box {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); /* Vertikal sentrering */
+    width: 40%; /* Begrenset bredde for teksten */
+    z-index: 10;
+    text-align: center;
+   /* Margin til høyre */
 }
 
-.ballinfo p {
-  font-size: 10px !important;
+/* For odd sections, place text-box on the right side */
+.section:nth-child(odd) .text-box {
+    left: 75%; /* Midt i høyre halvdel */
+    transform: translate(-50%, -50%); /* Sentrerer horisontalt og vertikalt */
 }
 
-.ballinfo {
-  padding-top: 2vh;
+/* For even sections, place text-box on the left side */
+.section:nth-child(even) .text-box {
+    left: 25%; /* Midt i venstre halvdel */
+    transform: translate(-50%, -50%); /* Sentrerer horisontalt og vertikalt */
+}
+
+.description {
+    font-size: 3rem;
+    color: #000;
+    
+    font-weight: 300;
+    
+    text-align: left;
+}
+
+.small-description {
+    font-size: 1.3rem;
+    color: #5a5a5a;
+    
+    font-weight: 300;  
+    text-align: left;
+}
+
+/* Explore-knapp */
+#exploreButton {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20vw;
+    padding: 15px 0;
+    font-size: 1.1em;
+    background-color: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 20;    
+    border-radius: 50px;
+}
+
+#exploreButton:hover {
+    background-color: #f7b162;
+    color: white;
+}
+
+.hidden {
+    display: none;
 }
 
 .mode-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.mode-container .mode-text {
-  font-size: 1em;
-  margin-bottom: 5px;
-}
-
-/* FOOTER SECTION */
-footer {
-  grid-area: footer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  background-color: #272727;
-  color: white;
-  width: 100%;
-  box-sizing: border-box;
-  z-index: 10;
-  position: relative;
-}
-
-footer p {
-  margin: 0;
-  font-size: 10px;
-  color: #ffffff;
-  text-align: center;
-}
-
-/* RESPONSIVE DESIGN */
-@media (max-width: 760px) {
-  .logo {
-    font-size: 20px;
-    margin-left:20px;
-  }
-
-  .product_name h1 {
-    font-size: 21px;
-  }
-
-  nav#desktop-nav > .product_name {
-    margin-right: 0;
-  }
-
-  footer p {
-    font-size: 10px;
-  }
-
-  footer {
-    padding: 15px;
-  }
-
-  #profile {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    padding: 1rem;
-    margin-top: 11vh; /* Reduced from 12vh to eliminate excess space */
-    gap: 1rem;
-  }
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
-  .section__pic-container {
-    width: 80%;
-    max-width: 200px;
-    height: auto;
-    aspect-ratio: 1;
-    margin: 0 auto;
-    flex: 0 0 auto;
-  }
+.mode-container .mode-text {
+    font-size: 1em;
+    margin-bottom: 5px;
+}
 
-  .section__pic-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.button-container {
+    
+    gap: 30px;
   }
-
-  .section__text {
-    text-align: center;
-    padding: 0 1rem;
-  }
-
-  .section__text .title {
-    font-size: 1.9rem;
+  
+  .btn1  {
+    padding: 10px 20px;
+    font-size: 0.8em;
+    cursor: pointer;
+    border-radius: 50px;
+    border: none;
+    color: white;
+    width: 9rem;
+    
     
   }
-
-  .section__text p {
-    font-size: 1rem;
-    padding: 5px;
-  }
-
-  #exploreButton {
-    font-size: 1.2em;
-    padding: 15px 30px;
-    width: 50vw;
-  }
-
-   .btn2 {
-    padding: 15px 0 15px 0;
-    font-size: 1em;
+  
+  .btn2  {
+    padding: 10px 20px;
+    font-size: 0.8em;
     cursor: pointer;
-    color: rgb(255, 255, 255);
-    width: 280px;
-    font-weight:600 ;
+    border-radius: 50px;
+    border: none;
+    color: white;
+    width: 9rem;
+
+  }
+  
+  .btn1:hover {
+    scale: 1.1;
+    transition: all 300ms ease;
+  }
+  
+  .btn2:hover {
+    scale: 1.1;
+    transition: all 300ms ease;
+  }
+  
+  .btn-color-3 {
+    background-color: #f0ad4e; /* Fun-stil */
+  }
+  
+  .button-container .btn-color-4 {
+    background: none; /* Serious-stil */
+    border: black 2px solid; 
+    color : black;
+    
+  }
+  
+  .btn-color-4 {
+    background-color: #f0ad4e; /* Fun-stil */ /* Serious-stil, definert for referanse */
   }
 
-  .btn1 {
-    padding: 4px 40px;
-    font-size: 1em;
-    cursor: pointer;
-    color: black;
-    width: 7rem;
-    font-weight:1000 ;
-  }
-  main {
-    grid-area: main;
-    display: block;
-    justify-content: center;
-    align-items: center; /* Vertically center content */
-    min-height: 0;
-  }
+
+/* Add specific styles for img-oval-1 */
+
+
+/* Responsivitet */
+@media (max-width: 768px) {
+    
+        .section {
+            height: 100vh; /* Ensure sections still take full screen height */
+        }
+        .toggleClip.img-woddy {
+            margin-top: 0px; /* Juster etter behov */
+        }
+
+    .description {
+        font-size: 2rem;
+    }
+
+    .oval img {
+        
+        min-width: 100px;
+    } 
+
+    .small-description {
+        font-size: 1rem;
+    }
+
+    .text-box {
+        width: 40vw /* Litt bredere på mobil */
+    }
+
+    #exploreButton {
+        font-size: 1.0em;
+        padding: 15px 30px;
+        width: 55vw;
+    }
+    .mode-container .btn2 {
+        padding: 10px 20px;
+        font-size: 0.5em;
+        cursor: pointer;
+        color: black;
+        width: 6rem;
+    }
+    .mode-container .btn1 {
+        padding: 10px 20px;
+        font-size: 0.5em;
+        cursor: pointer;
+        color: black;
+        width: 7rem;
+    }
+    .mode-container {
+        
+      }
+    .oval:hover {
+        transform: none;
+        
+    }
+    .section {
+        height: auto; /* Adjust height to content on mobile */
+    }
+
+    .oval {
+        height: auto; /* Adjust height to content on mobile */
+    }
 }
 
-@media (min-width: 760px) and (max-width: 1200px)  {
 
-#profile {
- flex-direction: column;
- gap: 3rem;
- }
-}
+
