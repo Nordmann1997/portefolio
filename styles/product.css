@@ -416,9 +416,7 @@ h1 {
     background-color: rgb(0, 0, 0); /* Endret bakgrunnsfarge */
 }
 
-.special-product .header {
-    background-color: rgb(0, 0, 0); /* Endret headerfarge */
-}
+
 
 .special-product p {
    color: rgb(255, 255, 255); /* Endret bakgrunnsfarge */
@@ -435,7 +433,7 @@ h1 {
 }
 
 .special-product .process-step {
-    background-image: linear-gradient(to right, rgb(18, 18, 18), rgb(30, 30, 30));
+    background-image: linear-gradient(to right, rgb(31, 31, 31), rgb(21, 21, 21));
     box-shadow: none;
 }
 
