@@ -76,6 +76,7 @@ body {
     width: 100%;
     height: auto; /* Ensure image maintains aspect ratio */
     object-fit: cover;
+    min-width: 1700px;
 } 
 
 .toggleClip.img-woddy {
@@ -237,6 +238,11 @@ body {
         font-size: 2rem;
     }
 
+    .oval img {
+        
+        min-width: 1100px;
+    } 
+
     .small-description {
         font-size: 1rem;
     }
@@ -280,5 +286,9 @@ body {
     }
 }
 
+@media (max-width: 768px) {
+
+    
 
 
+}
