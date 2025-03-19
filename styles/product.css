@@ -411,3 +411,30 @@ h1 {
 }
 
 
+/* Spesialstil for denne produktsiden */
+.special-product {
+    background-color: rgb(0, 0, 0); /* Endret bakgrunnsfarge */
+}
+
+.special-product .header {
+    background-color: rgb(0, 0, 0); /* Endret headerfarge */
+}
+
+.special-product p {
+   color: rgb(255, 255, 255); /* Endret bakgrunnsfarge */
+}
+
+.special-product .description-box {
+    background-color: rgba(0, 0, 0, 0.7); /* Mørkere bakgrunn for beskrivelsesboks */
+    color: white; /* Endre tekstfarge for bedre kontrast */
+}
+
+.special-product .image-grid img {
+    box-shadow: none; /* Fjerner skyggeeffekt */
+    filter: grayscale(100%);
+}
+
+.special-product .process-step {
+    background-image: linear-gradient(to right, rgb(18, 18, 18), rgb(30, 30, 30));
+    box-shadow: none;
+}
