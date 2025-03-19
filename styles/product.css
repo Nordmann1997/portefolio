@@ -438,3 +438,7 @@ h1 {
     background-image: linear-gradient(to right, rgb(18, 18, 18), rgb(30, 30, 30));
     box-shadow: none;
 }
+
+.special-product .how-its-made h1 {
+    color: white;
+}
