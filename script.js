@@ -69,6 +69,8 @@ class Ball {
             this.div.style.left = `${this.x - this.radius}px`;
             this.div.style.top = `${this.y - this.radius}px`;
         }
+
+        repositionBalls();
     }
 
     stopDrag() {
@@ -106,6 +108,12 @@ class Ball {
 function updateBallSizes() {
     let ballSizeVW = 15; // Størrelse i vw (f.eks. 15vw)
     let ballSize = (ballSizeVW / 100) * window.innerWidth; // Konverterer vw til piksler
+
+    // Ensure the ball size does not exceed 163px
+    if (ballSize > 163) {
+        ballSize = 163;
+    }
+
     let newRadius = ballSize / 2;
 
     gameObjects.forEach(ball => {
@@ -177,6 +185,9 @@ function createWorld() {
         new Ball(1100, 250, -30, 40, ballSize / 2, 'pictures/index/ball/oval.jpg', 'oval.html'),
         new Ball(1300, 300, 20, -20, ballSize / 2, 'pictures/index/ball/stolen.jpg', 'stolen.html') // Ny ball
     ];
+
+    // Adjust ball sizes immediately after creation
+    updateBallSizes();
 }
 
 // Kollisjonsdeteksjon mellom to baller
