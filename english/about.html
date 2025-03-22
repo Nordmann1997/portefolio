@@ -21,6 +21,18 @@
         <div>
           
         </div>
+        <button class="menu-btn" id="menuButton">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </button>
+      
+        <!-- Dropdown Menu -->
+        <div class="dropdown-menu" id="dropdownMenu">
+            <a href="about.html">About me</a>
+            <a href="contact.html">Contact info</a>
+        </div>
+
     </nav>
 
     <main>
@@ -78,5 +90,22 @@
     </div>
 
     <script src="../scripts/about.js"></script>
+
+    <script>   const menuButton = document.getElementById('menuButton');
+        const dropdownMenu = document.getElementById('dropdownMenu');
+    
+        menuButton.addEventListener('click', () => {
+            menuButton.classList.toggle('active');
+            dropdownMenu.classList.toggle('active');
+        });
+    
+        // Close menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!menuButton.contains(event.target) && !dropdownMenu.contains(event.target)) {
+                menuButton.classList.remove('active');
+                dropdownMenu.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
