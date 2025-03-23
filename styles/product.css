@@ -133,6 +133,7 @@ h1 {
 
 .description-box p {
     width: 100%;
+    margin-bottom: 100px;
     
    
     }
@@ -149,14 +150,14 @@ h1 {
 /* Generell styling for seksjonen */
 .how-its-made {
     margin-top: 40px;
-    margin-top: 100px;
+    margin-top: 150px;
     text-align: center;
 }
 
 .how-its-made h1 {
     font-size: 30px;
     font-weight: 400;
-    padding-bottom: 30px;
+    padding-bottom: 0px;
     color: 80 ,80, 80;
 }
 
@@ -231,7 +232,7 @@ h1 {
         width: 100%;
         padding: 5%;
         
-        margin-bottom: 20px !important; /* Ensures spacing between steps */
+       
     }
 
     .process-step img,
@@ -264,6 +265,14 @@ h1 {
     .how-its-made .image-grid {
         flex-direction: column; /* Stable process-step-elementene vertikalt */
     }
+
+    .how-its-made h1 {
+        font-size: 22px;
+        font-weight: 400;
+        padding-bottom: 30px;
+        
+    }
+    
 
     .image-grid {
         grid-template-columns: 1fr; /* En kolonne */
