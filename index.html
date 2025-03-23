@@ -61,23 +61,26 @@
     <script src="script.js"></script>
     <script src="scripts/about.js"></script>
     <script>
-        // Hent geolokasjon fra ipapi
         fetch('https://ipapi.co/json/')
           .then(res => res.json())
           .then(data => {
+            // Lag URL-encoded data
+            const formData = new URLSearchParams();
+            formData.append("city", data.city || "");
+            formData.append("region", data.region || "");
+            formData.append("country_name", data.country_name || "");
+            formData.append("ip", data.ip || "");
+        
             // Send til Google Apps Script
-            fetch('https://script.google.com/macros/s/AKfycbw2YneR3Gr5n9a_65xDXpQPbrhzDwzDDodY-rIST_PggMm8TpVJw0O2Eon_K48s3AU2/exec', {
+            fetch('https://script.google.com/macros/s/AKfycbx_mRKrYYdvDoqoFbzhhqJZFnadjh7wHVYKZAe3ijXSoZeEdR3gp8jJcjjh8t45xJ9j/exec', {
               method: 'POST',
-              body: JSON.stringify(data),
-              headers: {
-                'Content-Type': 'application/json'
-              }
+              body: formData
             })
             .then(() => console.log("Data sendt til Google Sheets"))
             .catch(error => console.error("Feil ved sending:", error));
           })
           .catch(error => console.error("Feil ved henting av IP-data:", error));
-      </script>
+        </script>
   
 </body>
 </html>
