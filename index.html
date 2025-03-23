@@ -60,7 +60,24 @@
     <div id="gameContainer"></div>
     <script src="script.js"></script>
     <script src="scripts/about.js"></script>
-    
+    <script>
+        // Hent geolokasjon fra ipapi
+        fetch('https://ipapi.co/json/')
+          .then(res => res.json())
+          .then(data => {
+            // Send til Google Apps Script
+            fetch('https://script.google.com/macros/s/AKfycbw2YneR3Gr5n9a_65xDXpQPbrhzDwzDDodY-rIST_PggMm8TpVJw0O2Eon_K48s3AU2/exec', {
+              method: 'POST',
+              body: JSON.stringify(data),
+              headers: {
+                'Content-Type': 'application/json'
+              }
+            })
+            .then(() => console.log("Data sendt til Google Sheets"))
+            .catch(error => console.error("Feil ved sending:", error));
+          })
+          .catch(error => console.error("Feil ved henting av IP-data:", error));
+      </script>
   
 </body>
 </html>
