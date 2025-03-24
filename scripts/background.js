@@ -10,11 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
         images.forEach((img) => {
             if (img.complete) {
                 const color = colorThief.getColor(img);
-                colors.push(`rgba(${color[0]}, ${color[1]}, ${color[2]}, 0.6)`);
+                colors.push(`rgba(${color[0]}, ${color[1]}, ${color[2]}, 0.3)`);
             } else {
                 img.addEventListener("load", () => {
                     const color = colorThief.getColor(img);
-                    colors.push(`rgba(${color[0]}, ${color[1]}, ${color[2]}, 0.6)`);
+                    colors.push(`rgba(${color[0]}, ${color[1]}, ${color[2]}, 0.3)`);
                     applyGradient(colors);
                 });
             }
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     function applyGradient(colors) {
-        const gradient = `linear-gradient(135deg, ${colors.join(", ")})`;
+        const gradient = `linear-gradient(90deg, ${colors.join(", ")})`;
         backgroundLayer.style.background = gradient;
     }
 
