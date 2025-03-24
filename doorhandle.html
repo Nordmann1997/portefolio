@@ -6,106 +6,107 @@
     <title>Dørhåndtak - Høyttaler</title>
     <link rel="stylesheet" href="styles/global.css">
     <link rel="stylesheet" href="styles/product.css">
-    <link rel="stylesheet" href="styles/global.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.min.js"></script>
 </head>
 <body>
     <nav id="desktop-nav">
         <div class="logo">
             <a href="tiles/index.html">JWK</a>
         </div>
-        <div class="product_name">
-            <h1>DØRHÅNDTAK</h1>
-        </div>
-        <div>
-            <div id="socials-container">
-            </div>
+        <div class="product_name"></div>
+        <button class="menu-btn" id="menuButton">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </button>
+        <div class="dropdown-menu" id="dropdownMenu">
+            <a href="about.html">Om meg</a>
+            <a href="contact.html">Kontakt info</a>
         </div>
     </nav>
-  
-    
-    <main>
 
-        <img src="pictures/doorhandle/blur.jpg" alt="Dørhåndtak" class="main-image">
-        
+    <main>
+        <div class="background-layer"></div> <!-- Bakgrunnslag separat fra innhold -->
+        <div class="background-container">
+            <div class="intro-container">
+                <img src="pictures/doorhandle/blur.jpg" alt="Dørhåndtak" class="main-image">
+                <h2 class="main-heading">Dørhåndtak</h2>
+                <section class="info-boxes">
+                    <div class="info-box">
+                        <h3>Prosjekt type</h3>
+                        <p>Skoleprosjekt</p>
+                    </div>
+                    <div class="info-box">
+                        <h3>År</h3>
+                        <p>2022</p>
+                    </div>
+                    <div class="info-box">
+                        <h3>Prosjekt lokasjon</h3>
+                        <p>Oslomet produktdesing</p>
+                    </div>
+                </section>
+                <div class="description-box">
+                    <p>Det første emne i produktdesign går ut på å lage et dørhåndtak. Mitt konsept går ut på å flytte navnskiltet
+                        ned på dørhåndtaket. I tillegg har jeg lagt til blindeskrift på baksiden, slik at de som er blinde eller svaksynte
+                        også enkelt kan finne fram. Prototypen er støpt i aluminium og det er brukt CNC til å maskinere ut bokstavene.</p>
+                </div>
+            </div>
+        </div>
         <section class="image-grid">
             <img src="pictures/doorhandle/blind.jpg" alt="Sidevisning">
-            <div class="description-box">
-                <p>Det første emne i produktdesign går ut på å lage et dørhåndtak. Mitt konsept går ut på å flytte navnskiltet
-                    ned på dørhåndtaket. I tillegg har jeg lagt til blindeskirft på baksiden, slik at de som er blinde eller svaksynte
-                    også enkelt kan finne fram. Prototypen er støpt i aluminium og det er brukt CNC til å maskinere ut bokstavene. 
-                </p>
-            </div>
-            <img src="pictures/doorhandle/medierom.jpg" alt="medierom">
-            <img src="pictures/doorhandle/soverom.jpg" alt="soverom">
-            <img src="pictures/doorhandle/3d-rom.jpg" alt="blind">
+            <img src="pictures/doorhandle/medierom.jpg" alt="Medierom">
+            <img src="pictures/doorhandle/soverom.jpg" alt="Soverom">
+            <img src="pictures/doorhandle/3d-rom.jpg" alt="3D-rom">
         </section>
-
-        <!-- New How It's Made Section -->
-       
-      
-     <!-- New How It's Made Section -->
-     <section class="how-its-made">
-        <h1>Kort om prosessen</h1>
-        <div class="image-grid">
-
-            <div class="process-step three-images-container">
-                <div class="three-images">
-                    <img src="pictures/doorhandle/produksjon/leire1.jpg" alt="Step 1">
-                    <img src="pictures/doorhandle/produksjon/leire2.jpg" alt="Step 2">
-                    <img src="pictures/doorhandle/produksjon/skum.jpg" alt="Step 3">
+        <section class="how-its-made">
+            <h1>Kort om prosessen</h1>
+            <div class="image-grid">
+                <div class="process-step">
+                    <img src="pictures/doorhandle/produksjon/leire1.jpg" alt="Mockup">
+                    <div class="text-box">
+                        <h3>Mockup</h3>
+                        <p>I denne prosessen var første steg å finne ut en form som var god å holde, samt med riktig 
+                            lengde på skaftet. Leire funker bra fordi det er lett å kutte i eller legge til materiale.</p>
+                    </div>
                 </div>
-                <div class="text-box">
-                    <h3>Mockup</h3>
-                    <p>I denne prosessen var første steg å finne ut en form som var god å holde, samt med riktig 
-                        lengde på skaftet. Leire er funker bra fordi det er lett å kutte i eller legge til materiale.
-                    </p>
+                <div class="process-step">
+                    <img src="pictures/doorhandle/produksjon/render.jpg" alt="Digital mockup">
+                    <div class="text-box">
+                        <h3>Digital mockup</h3>
+                        <p>Når man har en ide om proposjonene er neste steg å lage digitale mockups. Her er et tidlig 
+                            eksempel på konseptet.</p>
+                    </div>
                 </div>
-            </div>
-
-
-            <div class="process-step">
-                <img src="pictures/doorhandle/produksjon/render.jpg" alt="Treverk limt sammen til en blokk">
-                <div class="text-box">
-                    <h3>Digital mockup</h3>
-                    <p>Når man har en ide om proposjonene er neste steg å lage digitale mockups. Her er et tidlig 
-                        eksempel på konseptet. </p>
+                <div class="process-step">
+                    <img src="pictures/doorhandle/produksjon/proto.jpg" alt="Prototype">
+                    <div class="text-box">
+                        <h3>Prototype</h3>
+                        <p>Etterhvert sitter man igjen med et design med bra form og brukervennlighet i digital form. Neste steg er da
+                            å lage en prototype. Her er prototypen 3D-printet og lakkert for å gi et bedre resultat.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="process-step">
-                <img src="pictures/doorhandle/produksjon/proto.jpg" alt="Grovt maskinert resultat">
-                <div class="text-box">
-                    <h3>Protoype</h3>
-                    <p>Etterhvert sitter man igjen med et design med bra form og brukervennlighet i digital form. Neste steg er da
-                        å lage en prototype. Her er protoytypen 3D printet og lakkert for å gi et bedre resultat. 
-                    </p>
-                    </p>
+                <div class="process-step">
+                    <img src="pictures/doorhandle/produksjon/aluminium.jpg" alt="Prototype i aluminium">
+                    <div class="text-box">
+                        <h3>Prototype i aluminium</h3>
+                        <p>Senere, når jeg ble mer erfaren, bestemte jeg meg for å ta prototypen et steg videre.
+                            Jeg valgte derfor å støpe den i aluminium. Senere brukte jeg CNC til å gravere inn tekst på framsiden og
+                            blindeskrift på baksiden.</p>
+                    </div>
                 </div>
             </div>
-            <div class="process-step">
-                <img src="pictures/doorhandle/produksjon/aluminium.jpg" alt="Knapp i stål og furu">
-                <div class="text-box">
-                    <h3>Prototype i aluminium</h3>
-                    <p>Senere, når jeg ble mer erfaren, bestemste jeg meg for å ta prototypen et steg videre.
-                        Jeg valgte derfor å støpte den i aluminium. Senere brukte jeg CNC til å gravere inn tekst på framsiden og
-                        blindeskrift på baksiden.  </p>
-                    </p>
-                </div>
-            </div>
-         
-           
-            
+        </section>
+    </main>
+
+    <footer>
+        <div id="socials-container">
+            <a href="https://www.instagram.com/made_by_jwk/">Instagram</a>
         </div>
-    </section>
-</main>
+        <p>2025 - All rights reserved</p>
+    </footer>
 
-<footer>
-    <div id="socials-container">
-        <a href="https://www.instagram.com/made_by_jwk/">Instagram</a>
-    </div>
-    <p> 2025 - All rights reserved</p>
-</footer>
-
-<script src="scripts/slider.js"></script>
-<script src="scripts/about.js"></script>
+    <script src="scripts/product.js"></script>
+    <script src="scripts/about.js"></script>
+    <script src="scripts/background.js"></script>
 </body>
 </html>
