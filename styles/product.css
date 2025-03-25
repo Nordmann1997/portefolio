@@ -180,14 +180,14 @@ h1 {
     align-items: center;
     max-width: 100%;
     width: 100%;
-    
+    padding: 6%;
     box-sizing: border-box;
     height: auto;
     flex-direction: row;
-    /* background-image: linear-gradient(to right, rgb(235, 235, 235), rgb(255, 255, 255)); */
+    box-shadow: ;
+    box-shadow: 0 5px 16px 1px rgba(94, 94, 94, 0.618);
     
-    
-    border-radius: 5px;
+    border-radius: 40px;
    
     
    
