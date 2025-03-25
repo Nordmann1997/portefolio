@@ -83,7 +83,7 @@ h1 {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* To kolonner */
     grid-template-rows: repeat(3, auto); /* Tre rader */
-    gap: 100px;
+    gap: 80px;
     justify-items: center;
     width: 90vw;
     max-width: 1200px;
@@ -184,7 +184,7 @@ h1 {
     box-sizing: border-box;
     height: auto;
     flex-direction: row;
-    box-shadow: ;
+    
     box-shadow: 0 5px 16px 1px rgba(94, 94, 94, 0.618);
     
     
