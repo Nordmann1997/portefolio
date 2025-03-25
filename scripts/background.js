@@ -1,32 +1,35 @@
 document.addEventListener("DOMContentLoaded", () => {
     const colorThief = new ColorThief();
-    const images = document.querySelectorAll(".image-grid img");
+    const images = document.querySelectorAll(".image-grid img"); // Kun bilder i .image-grid
     const backgroundLayer = document.querySelector(".background-layer");
     let hasUpdated = false; // Flagg for å spore om bakgrunnen er oppdatert
 
     function updateBackground() {
         const colors = [];
         
+        // Hent farger kun fra bildene i .image-grid
         images.forEach((img) => {
             if (img.complete) {
                 const color = colorThief.getColor(img);
-                colors.push(`rgba(${color[0]}, ${color[1]}, ${color[2]}, 0.3)`);
+                colors.push(`rgba(${color[0]}, ${color[1]}, ${color[2]}, 0.3)`); // 30% opacity
             } else {
                 img.addEventListener("load", () => {
                     const color = colorThief.getColor(img);
-                    colors.push(`rgba(${color[0]}, ${color[1]}, ${color[2]}, 0.3)`);
+                    colors.push(`rgba(${color[0]}, ${color[1]}, ${color[2]}, 0.)`); // 30% opacity
                     applyGradient(colors);
                 });
             }
         });
 
+        // Bruk gradienten bare hvis vi har farger fra bildene
         if (colors.length > 0) {
             applyGradient(colors);
         }
     }
 
     function applyGradient(colors) {
-        const gradient = `linear-gradient(90deg, ${colors.join(", ")})`;
+        // Gradient basert kun på fargene fra .image-grid
+        const gradient = `linear-gradient(100deg, ${colors.join(", ")})`;
         backgroundLayer.style.background = gradient;
     }
 
