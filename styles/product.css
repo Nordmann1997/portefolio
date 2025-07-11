@@ -185,7 +185,7 @@ h1 {
     height: auto;
     flex-direction: row;
     
-    box-shadow: 0 5px 16px 1px rgba(94, 94, 94, 0.618);
+    box-shadow: inset 1px 1px 10px 1px rgba(94, 94, 94, 0.318)
     
     
    
