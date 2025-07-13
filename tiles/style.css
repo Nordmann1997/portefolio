@@ -242,7 +242,6 @@ body {
         
         min-width: 1000px;
         height: 300px;
-
     } 
 
     .small-description {
@@ -289,4 +288,37 @@ body {
 }
 
 
+@media (min-width: 2300px) {
+     
+    .section {
+        
+        max-height: 700px;
+        
+    }
 
+
+
+}
+
+.expand-banner {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    background: none;
+    color: #222;
+    font-size: 0.8rem;
+    font-family: poppins, sans-serif;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    z-index: 15;
+    text-align: center;
+    pointer-events: none;
+    user-select: none;
+    height: 100px; /* matcher header-høyde */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
