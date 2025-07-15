@@ -141,7 +141,7 @@ nav#desktop-nav::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(99, 209, 246, 0.147);
+   background: rgba(255, 255, 255, 0.26);
     pointer-events: none;
     z-index: 2;
 }
