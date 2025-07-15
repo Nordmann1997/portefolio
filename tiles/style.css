@@ -4,7 +4,7 @@ body {
     background-color: #f4f4f4;
     font-family: poppins;
     width: 100vw;
-    height: 100vh; /* Ensure body takes full viewport height */
+   
     overflow-x: hidden; /* Prevent horizontal overflow */
 }
 
@@ -22,6 +22,9 @@ body {
     max-height: 500px;
     
 }
+
+
+
 
 .oval {
     width: 100%;
@@ -302,23 +305,16 @@ body {
 
 .expand-banner {
     position: absolute;
-    top: 0;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    width: auto;
+    transform: translate(-50%, -50%);
     background: none;
-    color: #222;
+    color: #535252;
     font-size: 0.8rem;
     font-family: poppins, sans-serif;
-    padding: 0;
-    border-radius: 0;
-    box-shadow: none;
-    z-index: 15;
+    z-index: 4; /* Over glass content men under header-ui */
     text-align: center;
     pointer-events: none;
     user-select: none;
-    height: 100px; /* matcher header-høyde */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-weight: 800;
 }

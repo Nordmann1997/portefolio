@@ -32,15 +32,15 @@ nav#desktop-nav {
     
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100px;
+   
+    height: 70px;
     background: #fff;
     z-index: 100;
     
 }
 
 
-
+    
 
 #socials-container {
     display: flex;
@@ -90,4 +90,68 @@ nav#desktop-nav {
     .logo {
         font-size: 20px;
     }
+}
+
+
+/* Glass effect for header */
+nav#desktop-nav {
+    overflow: hidden;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    transform: translate3d(0,0,0);
+    will-change: transform;
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%); /* Sentrerer horisontalt */
+    width: calc(100% - 20px); /* Full bredde minus margin */
+    max-width: 1200px; /* Eventuell max-bredde */
+}
+
+nav#desktop-nav::before {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 3px;
+ 
+    border-radius: 50px; /* Matcher header radius */
+    z-index: 5;
+}
+
+.glass-header-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transform: translate3d(0,0,0);
+    will-change: transform;
+}
+
+.glass-header-content::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(99, 209, 246, 0.147);
+    pointer-events: none;
+    z-index: 2;
+}
+
+.header-ui {
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
